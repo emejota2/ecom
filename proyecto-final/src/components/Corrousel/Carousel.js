@@ -9,11 +9,11 @@ const Carousel = () => {
     <div className='body'>
     <div class="main_box">
         <div class="img img1">
-            <p>vape</p>
+            <p>Vapes</p>
         </div>
   
         <div class="img img2">
-            <p>Resistencia</p>
+            <p>Resistencias</p>
         </div>
   
         <div class="img img3">
