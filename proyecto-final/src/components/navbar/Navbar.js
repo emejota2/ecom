@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../../img/1659900393707.jpg'
 
@@ -15,37 +15,37 @@ const Navbar = () => {
     <div className="collapse navbar-collapse btn-group mx-auto" id="navbarSupportedContent">
       <ul className="navbar-nav btn-group mx-auto">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">VAPES</a>
+          <Link className="nav-link active" aria-current="page" to="/">VAPES</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">COILS</a>
+          <Link className="nav-link active ms-4" aria-current="page" to="/">COILS</Link>
         </li>
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle active ms-4" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ACCESORIOS
-          </a>
+          </Link>
           <ul className="dropdown-menu bg-dark dropdown-menu-dark">
-            <li><a className="dropdown-item" href="#">Sabores</a></li>
-            <li><a className="dropdown-item" href="#">Tanques</a></li>
-            <li><a className="dropdown-item" href="#">Baterias</a></li>
+            <li><Link className="dropdown-item" to="/">Sabores</Link></li>
+            <li><Link className="dropdown-item" to="/">Tanques</Link></li>
+            <li><Link className="dropdown-item" to="/">Baterias</Link></li>
           </ul>
         </li>
       </ul>
       <ul className="navbar-nav ml-auto nav-flex-icons">
           <li className="nav-item me-3">
-            <a className="nav-link active" href='#'>
+            <Link className="nav-link active" to="/">
             <i className="bi bi-heart"></i>
-            </a>
+            </Link>
           </li>
           <li className="nav-item me-3">
-            <a className="nav-link active" href='#'>
+            <Link className="nav-link active" to="/">
             <i className="bi bi-cart2"></i>
-            </a>
+            </Link>
           </li>
           <li className="nav-item me-3">
-            <a className="nav-link active" href='#'>
+            <Link className="nav-link active" to="/">
             <i className="bi bi-person"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       

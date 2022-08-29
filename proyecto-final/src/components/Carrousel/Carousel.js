@@ -3,17 +3,17 @@ import './Carrousel.css'
 
 const Carousel = () => {
   return (
-    <div className='body'>
-    <div class="main_box">
-        <div class="img img1">
+    <div className='body mt-5'>
+    <div className="main_box mt-5">
+        <div className="img img1">
             <p>Vapes</p>
         </div>
   
-        <div class="img img2">
+        <div className="img img2">
             <p>Resistencias</p>
         </div>
   
-        <div class="img img3">
+        <div className="img img3">
             <p>Accesorios</p>
         </div>
   

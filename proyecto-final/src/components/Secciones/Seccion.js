@@ -1,31 +1,32 @@
 import React from 'react'
 import './Seccion.css'
+import { Link } from 'react-router-dom'
 import img1 from '../../img/lost vape ursa nano.jpg'
 import img2 from '../../img/smoke pen.jpg'
 import img3 from '../../img/centaurus quest.jpg'
 
 const Seccion = () => {
   return (
-    <div class="hero-section">
-  <div class="card-grid">
-    <a class="card" href="#">
-      <div class="card__background imgSec"></div>
-      <div class="card__content">
-        <h3 class="card__heading">MAS VENDIDOS</h3>
+    <div className="hero-section">
+  <div className="card-grid my-5">
+    <Link className="card me-3" to="/">
+      <div className="card__background imgSec"></div>
+      <div className="card__content">
+        <h3 className="card__heading">MAS VENDIDOS</h3>
       </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background imgSec2" ></div>
-      <div class="card__content">
-        <h3 class="card__heading">NUEVOS PRODUCTOS</h3>
+    </Link>
+    <Link className="card me-3" to="/">
+      <div className="card__background imgSec2" ></div>
+      <div className="card__content">
+        <h3 className="card__heading">NUEVOS PRODUCTOS</h3>
       </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background imgSec3" ></div>
-      <div class="card__content">
-        <h3 class="card__heading">HIGHLIGHT</h3>
+    </Link>
+    <Link className="card" to="/">
+      <div className="card__background imgSec3" ></div>
+      <div className="card__content">
+        <h3 className="card__heading">HIGHLIGHT</h3>
       </div>
-    </a>
+    </Link>
   </div>
 </div>
   )

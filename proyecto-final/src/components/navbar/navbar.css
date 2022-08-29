@@ -7,5 +7,10 @@
 }
 
 i{
-    font-size: 17px;
+    font-size: 19px;
+}
+
+.nav-item{
+    font-size: 15px;
+    font-weight: 600;
 }
