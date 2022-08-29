@@ -61,7 +61,7 @@ const Footer = () => {
                 
                   <div className="footer_menu">
                     <ul>
-                      <li><Link>+58123334</Link></li>
+                      <li><Link to='/'> +58123334</Link></li>
                       <li><Link to='/'>Proyecto@pdtc.com</Link></li>
                       <li><Link to='/'>Term &amp; Conditions</Link></li>
                       <li><Link to='/'>Help Center</Link></li>
