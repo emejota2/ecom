@@ -13,10 +13,11 @@ const Footer = () => {
               <div className="col-12 col-sm-6 col-lg-4 pb-3">
                 <div className="single-footer-widget section_padding_0_130">
                   <div className="footer_social_area">
-                    <Link to="/" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i className="fa fa-facebook"></i></Link>
-                    <Link to="/" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i className="fa fa-pinterest"></i></Link>
-                    <Link to="/" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i className="fa fa-skype"></i></Link>
-                    <Link to="/" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i className="fa fa-twitter"></i></Link></div>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i className="fa fa-facebook"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i className="fa fa-pinterest"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i className="fa fa-skype"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i className="fa fa-twitter"></i></Link>
+                    </div>
                 </div>
               </div>
              
@@ -27,10 +28,10 @@ const Footer = () => {
                  
                   <div className="footer_menu">
                     <ul>
-                      <li><Link to="/">About Us</Link></li>
-                      <li><Link to="/">Corporate Sale</Link></li>
-                      <li><Link to="/">Terms &amp; Policy</Link></li>
-                      <li><Link to="/">Community</Link></li>
+                      <li><Link to='/'>About Us</Link></li>
+                      <li><Link to='/'>Corporate Sale</Link></li>
+                      <li><Link to='/'>Terms &amp; Policy</Link></li>
+                      <li><Link to='/'>Community</Link></li>
                     </ul>
                   </div>
                 </div>
@@ -43,11 +44,11 @@ const Footer = () => {
                  
                   <div className="footer_menu">
                     <ul>
-                      <li><Link to="/">Vapes</Link></li>
-                      <li><Link to="/">Baterias</Link></li>
-                      <li><Link to="/">Resistencias</Link></li>
-                      <li><Link to="/">Sabores</Link></li>
-                      <li><Link to="/">Tanques</Link></li>
+                      <li><Link to='/'>Vapes</Link></li>
+                      <li><Link to='/'>Baterias</Link></li>
+                      <li><Link to='/'>Resistencias</Link></li>
+                      <li><Link to='/'>Sabores</Link></li>
+                      <li><Link to='/'>Tanques</Link></li>
                     </ul>
                   </div>
                 </div>
@@ -61,9 +62,9 @@ const Footer = () => {
                   <div className="footer_menu">
                     <ul>
                       <li><Link>+58123334</Link></li>
-                      <li><Link to="/">Proyecto@pdtc.com</Link></li>
-                      <li><Link to="/">Term &amp; Conditions</Link></li>
-                      <li><Link to="/">Help Center</Link></li>
+                      <li><Link to='/'>Proyecto@pdtc.com</Link></li>
+                      <li><Link to='/'>Term &amp; Conditions</Link></li>
+                      <li><Link to='/'>Help Center</Link></li>
                     </ul>
                   </div>
                 </div>
