@@ -48,33 +48,29 @@ p{
     text-transform: uppercase;
     white-space: nowrap;
 }
-  
+
 .img1 {
-    background-image: url(../../IMG/centaurus\ quest.jpg);
+    background-image: url(../../img/centaurus\ quest.jpg);
     
 }
-  
+
 .img2 {
     
-    background-image: url(../../IMG/UB-PRO-SERIES-COILS_01-1.jpg);
+    background-image: url(../../img/UB-PRO-SERIES-COILS_01-1.jpg);
 }
-  
+
 .img3 {
-    background-image: url(../../IMG/Vapcell-K25-Battery-1.png);
+    background-image: url(../../img/Vapcell-K25-Battery-1.png);
 }
-  
-.img4 {
-    background-image: url(../../IMG/World-Flavors-Salts-50-mg_ml-PW.jpg);
-}
-  
+
 .main_box:hover .img{
     transform: skew(0);
 }
-  
+
 .img:hover{
     flex: 3;
 }
-  
+
 .img:hover p{
     background-color: #be3144;
     border: .125em solid blue;

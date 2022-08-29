@@ -1,12 +1,12 @@
 import React from 'react'
 
 import './Navbar.css'
-import logo from '../../IMG/1659900393707.jpg'
+import logo from '../../img/1659900393707.jpg'
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg navbar-dark fixed-top py-3">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-3">
   <div className="container-fluid">
     <img src={logo} alt='logo' className='logo ms-3'/>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,17 +20,14 @@ const Navbar = () => {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="#">COILS</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link active" href="#">BATERIAS</a>
-        </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ACCESORIOS
           </a>
           <ul className="dropdown-menu bg-dark dropdown-menu-dark">
-            <li><a className="dropdown-item" href="#">SABORES</a></li>
-            <li><a className="dropdown-item" href="#">TANQUES</a></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
+            <li><a className="dropdown-item" href="#">Sabores</a></li>
+            <li><a className="dropdown-item" href="#">Tanques</a></li>
+            <li><a className="dropdown-item" href="#">Baterias</a></li>
           </ul>
         </li>
       </ul>

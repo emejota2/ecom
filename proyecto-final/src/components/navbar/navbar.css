@@ -1,8 +1,9 @@
 .logo{
     width: 3%;
 }
-.bg{
-    background-color:#303841;
+.navbar-dark{
+    backdrop-filter: blur(30px);
+    background-color: rgba(3, 0, 0, 0.5)
 }
 
 i{

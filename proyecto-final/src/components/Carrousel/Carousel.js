@@ -1,7 +1,4 @@
 import React from 'react'
-import img1 from '../../IMG/lost vape ursa nano.jpg'
-import img2 from '../../IMG/smoke pen.jpg'
-import img3 from '../../IMG/centaurus quest.jpg'
 import './Carrousel.css'
 
 const Carousel = () => {
@@ -17,12 +14,9 @@ const Carousel = () => {
         </div>
   
         <div class="img img3">
-            <p>Baterias</p>
+            <p>Accesorios</p>
         </div>
   
-        <div class="img img4">
-            <p>Sabores</p>
-        </div>
     </div>
     </div>
   )

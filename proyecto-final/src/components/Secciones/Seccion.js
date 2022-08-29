@@ -1,8 +1,8 @@
 import React from 'react'
 import './Seccion.css'
-import img1 from '../../IMG/lost vape ursa nano.jpg'
-import img2 from '../../IMG/smoke pen.jpg'
-import img3 from '../../IMG/centaurus quest.jpg'
+import img1 from '../../img/lost vape ursa nano.jpg'
+import img2 from '../../img/smoke pen.jpg'
+import img3 from '../../img/centaurus quest.jpg'
 
 const Seccion = () => {
   return (
