@@ -121,6 +121,7 @@ webkit-box-shadow: 0 8px 48px 8px #303841;
 .footer_social_area {
     position: relative;
     z-index: 1;
+    padding-bottom: 10px;
 }
 .footer_social_area a {
     border-radius: 50%;
@@ -132,8 +133,7 @@ webkit-box-shadow: 0 8px 48px 8px #303841;
     line-height: 40px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    margin-right: 10px;
-    
+    margin-right: 10px;  
 }
 .footer_social_area a i {
     line-height: 36px;

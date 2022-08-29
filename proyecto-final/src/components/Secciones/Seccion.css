@@ -19,8 +19,6 @@
   .imgSec3{
     background-image: url('../../IMG/lost\ vape\ ursa\ nano.jpg');
   }
-
-
   
   *{
     border: 0;
@@ -93,7 +91,7 @@
     right: 0;
     top: 0;
     transform-origin: center;
-    trsnsform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
     transition: 
       filter 200ms linear,
       transform 200ms linear;
@@ -104,7 +102,7 @@
   }
   
   .card-grid:hover > .card:not(:hover) .card__background{
-    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(5px);
   }
   
   .card__content{
@@ -113,8 +111,6 @@
     position: absolute;
     top: 0;
   }
-  
- 
   
   .card__heading{
     color: var(--text-lighter);
