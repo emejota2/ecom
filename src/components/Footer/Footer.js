@@ -13,10 +13,10 @@ const Footer = () => {
               <div className="col-12 col-sm-6 col-lg-4 pb-3">
                 <div className="single-footer-widget section_padding_0_130">
                   <div className="footer_social_area">
-                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i className="fa fa-facebook"></i></Link>
-                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i className="fa fa-pinterest"></i></Link>
-                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i className="fa fa-skype"></i></Link>
-                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i className="fa fa-twitter"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="bi bi-facebook"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram"><i class="bi bi-instagram"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="WhatsApp"><i class="bi bi-whatsapp"></i></Link>
+                    <Link to='/' data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="bi bi-twitter"></i></Link>
                     </div>
                 </div>
               </div>
