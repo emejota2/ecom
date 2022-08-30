@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+.cardvid {
+  height: 500px;
+  background-color: #be3144;
+}
+.vap {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+.vid {
+  margin-top: 70px;
+  width: 400px;
+  height: 200px;
+}
+.video-responsive{
+    margin-bottom: 0px;
+}

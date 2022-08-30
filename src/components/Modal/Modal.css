@@ -1,0 +1,20 @@
+.modaltext{
+    color: black;
+    text-align: justify;
+}
+
+.textboton{
+    color: white;
+    text-decoration: none;
+}
+.modaltitulo{
+    color: black;
+    text-align: center;
+    margin-left: 165px;
+}
+.modal{
+    background-color: #3a4750
+}
+.modalbody{
+    background-color: #303841
+}
