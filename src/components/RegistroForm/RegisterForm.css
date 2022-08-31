@@ -1,0 +1,40 @@
+ 
+
+
+.card2{
+    border-radius: 15px;
+}
+
+.card3{
+    color: #be3144;
+}
+.formbody{
+    background-color: #363636;;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: px;
+}
+
+
+
+.bg-indigo {
+background-color: #be3144
+}
+@media (min-width: 992px) {
+.card-registration-2 .bg-indigo {
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+}
+@media (max-width: 991px) {
+.card-registration-2 .bg-indigo {
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+}
