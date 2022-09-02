@@ -18,12 +18,12 @@ const LogginForm = () => {
               <p class="text-white-50 mb-5">Please enter your user and password!</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="text" placeholder='USER' id="typeEmailX" class="form-control form-control-lg" />
-                <label class="form-label" for="typeEmailX">user</label>
+                <input type="text" placeholder='USER' id="typeEmailX" class="form-control form-control-lg" required/>
+                <label class="form-label" for="typeEmailX">User</label>
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" placeholder='PASSWORD' id="typePasswordX" class="form-control form-control-lg" />
+                <input type="password" placeholder='PASSWORD' id="typePasswordX" class="form-control form-control-lg" required/>
                 <label class="form-label" for="typePasswordX">Password</label>
               </div>
 
