@@ -29,12 +29,12 @@ const Modals = () => {
 We use cookies to improve our website and your experience browsing it. By continuing to browse our website you accept our Cookie Policy.</h4>
         </Modal.Body>
         <Modal.Footer>
-          <button className="btn btn-dark" onClick={handleClose}>
-            SOY MAYOR
-          </button>
-          <button className="btn btn-dark">
-           <Link className="textboton" to='/'> SOY MENOR </Link> 
-          </button>
+              <button className="btn btn-dark" onClick={handleClose}>
+                SOY MAYOR
+              </button>
+              <button className="btn btn-dark">
+              <Link className="textboton" to='/'> SOY MENOR </Link> 
+              </button>
             
         </Modal.Footer>
       </Modal>

@@ -25,9 +25,9 @@ const Navbar = () => {
             ACCESORIOS
           </Link>
           <ul className="dropdown-menu bg-dark dropdown-menu-dark">
-            <li><Link className="dropdown-item" to='/'>Sabores</Link></li>
-            <li><Link className="dropdown-item" to='/'>Tanques</Link></li>
-            <li><Link className="dropdown-item" to='/'>Baterias</Link></li>
+            <li><Link className="dropdown-item" to='/Sabores'>Sabores</Link></li>
+            <li><Link className="dropdown-item" to='/Tanques'>Tanques</Link></li>
+            <li><Link className="dropdown-item" to='/Baterias'>Baterias</Link></li>
           </ul>
         </li>
       </ul>
