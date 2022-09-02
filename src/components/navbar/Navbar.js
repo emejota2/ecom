@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item me-3">
-            <Link className="nav-link active" to='/'>
+            <Link className="nav-link active" to='/loggin'>
             <i className="bi bi-person"></i>
             </Link>
           </li>

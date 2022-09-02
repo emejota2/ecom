@@ -6,15 +6,15 @@ const Carousel = () => {
     <div className='body mt-5'>
     <div className="main_box mt-5">
         <div className="img img1">
-            <p>Vapes</p>
+            <p className='p'>Vapes</p>
         </div>
   
         <div className="img img2">
-            <p>Resistencias</p>
+            <p className='p'>Resistencias</p>
         </div>
   
         <div className="img img3">
-            <p>Accesorios</p>
+            <p className='p'>Accesorios</p>
         </div>
   
     </div>
