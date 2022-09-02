@@ -1,10 +1,13 @@
 import React from 'react'
+import CardBaterias from '../../../components/CardAccesorios/CardBaterias'
+import './Baterias.css'
 
 const Baterias = () => {
-    return (
-        <div>
 
-        </div>
+    return (
+        <>
+        <CardBaterias />
+        </>
     )
 }
 
