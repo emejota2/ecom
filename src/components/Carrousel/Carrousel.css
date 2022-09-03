@@ -36,7 +36,7 @@
     position: relative;
 }
   
-p{
+.p{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -71,7 +71,7 @@ p{
     flex: 3;
 }
 
-.img:hover p{
+.img:hover .p{
     background-color: #be3144;
     border: .125em solid blue;
     color: rgb(165, 146, 143);

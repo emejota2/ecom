@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../../components/Card/Card'
 import CardVideo from '../../components/cardVideo/CardVideo'
 import Carousel from '../../components/Carrousel/Carousel'
 import Modals from '../../components/Modal/Modal'
@@ -11,8 +12,6 @@ const Home = () => {
         <Seccion />
         <CardVideo/>
         <Modals/>
-        
-        
     </div>
   )
 }
