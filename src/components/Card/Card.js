@@ -1,52 +1,37 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import cors from 'cors';
 import "./Card.css";
-import { setAppElement } from "react-modal";
 
-const Card = () => {
+
+const Card = (props) => {
   
-  const [producto, setProducto] = useState([]);
-
-  const obtenerdatos = async () => {
-    const response = await axios.get(
-      `https://backendvape.herokuapp.com/products`
-    );
-    setProducto(response.data);
-    console.log(setProducto);
-  };
-
-  useEffect(() => {
-    obtenerdatos();
-  }, []);
+  const {brand, model, price, image, information}= props
 
   return (
     <div>
-      <div class="product-card">
-        <div class="badge">Hot</div>
-        <div class="product-tumb">
-          <img src="https://i.imgur.com/xdbHo4E.png" alt="" />
+      <div className="product-card">
+        <div className="badge">Hot</div>
+        <div className="product-tumb">
+          <Link to="/"><img src={image} alt="" /></Link>
         </div>
-        <div class="product-details">
-          <span class="product-catagory">Women,bag</span>
+        <div className="product-details">
+          <span className="product-catagory">{brand}</span>
           <h4>
-            <Link to="">Women leather bag</Link>
+            <Link to="/vape">{model}</Link>
           </h4>
-          <h4>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero,
-            possimus nostrum!
+          <h4 className="info">
+            {information}
           </h4>
-          <div class="product-bottom-details">
-            <div class="product-price">
-              <small>$96.00</small>$230.99
+          <div className="product-bottom-details">
+            <div className="product-price">
+             Precio: {price}$
             </div>
-            <div class="product-links">
-              <Link to="">
-                <i class="fa fa-heart"></i>
+            <div className="product-links">
+              <Link to="/">
+              <i className="bi bi-heart-fill me-2"></i>
               </Link>
-              <Link to="">
-                <i class="fa fa-shopping-cart"></i>
+              <Link to="/">
+              <i className="bi bi-cart"></i>
               </Link>
             </div>
           </div>
