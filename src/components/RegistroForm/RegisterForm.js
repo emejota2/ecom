@@ -3,8 +3,8 @@ import "./RegisterForm.css";
 
 const RegisterForm = () => {
   return (
-    <section className=" pt-5 formbody ">
-      <div className="container py-5  ">
+    <section className="pt-5 formbody">
+      <div className="container py-5">
         <div className="ro d-flex justify-content-center align-items-center">
           <div className="col-12">
             <div className=" card-registration card-registration-2 card2">
@@ -15,7 +15,7 @@ const RegisterForm = () => {
                       <h3 className="fw-normal mb-5 card3">
                         General Infomation
                       </h3>
-
+                    <div>
                       <div className="row">
                         <div className="col-md-6 mb-4 pb-2">
                           <div className="form-outline">
@@ -44,14 +44,15 @@ const RegisterForm = () => {
                           </div>
                         </div>
                       </div>
+                      </div>
 
                       <div className="row">
-                        <div className="col-md-6 mb-4 pb-2">
+                        <div className="col-md-6 mb-4">
                           <div className="form-outline">
                           <label className="form-label" for="form3Examplev3">
                               Gender
                               </label>
-                              <select class="form-select form-control form-control-lg" id="inputGroupSelect02">
+                              <select class="form-select p-3" id="inputGroupSelect02">
                                 <option selected>Choose...</option>
                                 <option value="1">Female</option>
                                 <option value="2">Male</option>
@@ -221,6 +222,8 @@ const RegisterForm = () => {
                             type="text"
                             id="form3Examplea9"
                             className="form-control form-control-lg"
+                            placeholder="name@example.com"
+                            required
                           />
                         </div>
                       </div>
@@ -231,6 +234,7 @@ const RegisterForm = () => {
                           type="checkbox"
                           value=""
                           id="form2Example3c"
+                          required
                         />
                         <label
                           class="form-check-label text-white ms-3"
@@ -259,6 +263,7 @@ const RegisterForm = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };

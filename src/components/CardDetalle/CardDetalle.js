@@ -11,12 +11,15 @@ const CardDetalle = (props) => {
         <div className='d-flex'>
             <img className='' alt="" src={image}/>
             <div className=''>
-                <h2 className=''>{model}</h2>
-                <h2 className=''>{overview}</h2>
-                <h2 className='texto2 '>calificacion: ⭐ {vote_average}</h2>
-                <h2 className='texto2 '> Fecha de lanzamiento: {release_date}</h2>
-                <button className='icon shadow' onClick={() => favAdd(movie)}><span aria-label={label} role='img'>{emoji}</span></button>
-                <Link className='btn boton  shadow ' to='/appMovieReact'>Volver</Link>
+                <h3 className=''>{model}</h3>
+                <p className=''>{description}</p>
+                <p className=''>{information}</p>
+                <p className=''>{price}</p>
+                <p className=''>{stock}</p>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn" type="button">Agregar al carrito</button>
+                    <button class="btn" type="button">Fav</button>
+                </div>
             </div>
         </div>
     </div>
