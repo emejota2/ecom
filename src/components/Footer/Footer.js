@@ -4,8 +4,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div><link to="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
+    <div className=''><link to="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <footer className="footer_area section_padding_130_0 bg">
           <div className="container">
             <div className="row">
@@ -20,12 +19,9 @@ const Footer = () => {
                     </div>
                 </div>
               </div>
-             
               <div className="col-12 col-sm-6 col-lg">
                 <div className="single-footer-widget section_padding_0_130 pb-3">
-                 
                   <h5 className="widget-title">About</h5>
-                 
                   <div className="footer_menu">
                     <ul>
                       <li><Link to='/'>About Us</Link></li>
@@ -36,7 +32,6 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-             
               <div className="col-12 col-sm-6 col-lg">
                 <div className="single-footer-widget section_padding_0_130 pb-3">
                  
