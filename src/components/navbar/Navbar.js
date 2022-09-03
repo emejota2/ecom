@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="collapse navbar-collapse btn-group mx-auto" id="navbarSupportedContent">
       <ul className="navbar-nav btn-group mx-auto">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to='/'>VAPES</Link>
+          <Link className="nav-link active" aria-current="page" to='/vapes'>VAPES</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link active ms-4" aria-current="page" to='/'>COILS</Link>
