@@ -27,10 +27,10 @@ const Card = (props) => {
              Precio: {price}$
             </div>
             <div className="product-links">
-              <Link to="/">
+              <Link to="">
               <i className="bi bi-heart-fill me-2"></i>
               </Link>
-              <Link to="/">
+              <Link to="">
               <i className="bi bi-cart"></i>
               </Link>
             </div>

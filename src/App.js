@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Signup from "./pages/Signup/Signup";
 import Loggin from "./pages/Loggin/Loggin";
 import { Vapes } from "./pages/Vapes/Vapes";
+import { Coils } from "./pages/Coils/Coils";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/loggin" element={<Loggin/>}/>
           <Route path="/vapes" element={<Vapes/>}/>
+          <Route path="/coils" element={<Coils/>}/>
         </Routes>
       <Footer/>
     </Router>

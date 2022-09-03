@@ -2,17 +2,17 @@ import React, { useContext } from 'react'
 import Card from '../../components/Card/Card'
 import { Context } from '../../Store/Store'
 
-export const Vapes = () => {
+export const Coils = () => {
     const {producto} = useContext(Context)
 
-    const Vapes = producto.filter((vape) => vape.category === 'vapes')
-  return (
+    const Resistencias = producto.filter((coil) => coil.category === 'resistencias')
+    return (
     <div className='container '>
         <div className='d-flex flex-wrap justify-content-around'>
         {
-          Vapes.length>0?(
-            Vapes.map((vapes)=>(
-              <Card key={vapes.id} {...vapes}/>
+          Resistencias.length>0?(
+            Resistencias.map((coil)=>(
+              <Card key={coil.id} {...coil}/>
             ))
           ) : (<p>cargando</p>)
         }
