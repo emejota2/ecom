@@ -1,13 +1,23 @@
-import React from 'react'
-import CardBaterias from '../../../components/CardAccesorios/CardBaterias'
+import React, { useContext } from 'react'
+import Card from '../../../components/Card/Card'
+import { Context } from '../../../Store/Store'
 import './Baterias.css'
 
 const Baterias = () => {
-
+    const {producto} = useContext(Context)
+    const Baterias = producto.filter((bat) => bat.category === 'accesorios')
     return (
-        <>
-        <CardBaterias />
-        </>
+        <div className='container '>
+        <div className='d-flex flex-wrap justify-content-around'>
+        {
+          Baterias.length>0?(
+            Baterias.map((vapes)=>(
+              <Card key={vapes.id} {...vapes}/>
+            ))
+          ) : (<p>cargando</p>)
+        }
+        </div>
+        </div>
     )
 }
 

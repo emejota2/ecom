@@ -1,13 +1,24 @@
-import React from 'react'
-import CardTanques from '../../../components/CardAccesorios/CardTanques'
+import React, { useContext } from 'react'
+import Card from '../../../components/Card/Card'
+import { Context } from '../../../Store/Store'
 import './Tanques.css'
 
 const Tanques = () => {
 
+    const {producto} = useContext(Context)
+    const Tank = producto.filter((Tank) => Tank.type === 'tank')
     return (
-        <>
-        <CardTanques />
-        </>
+        <div className='container '>
+        <div className='d-flex flex-wrap justify-content-around'>
+        {
+          Tank.length>0?(
+            Tank.map((vapes)=>(
+              <Card key={vapes.id} {...vapes}/>
+            ))
+          ) : (<p>cargando</p>)
+        }
+        </div>
+        </div>
     )
 }
 

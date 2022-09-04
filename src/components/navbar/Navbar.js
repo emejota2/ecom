@@ -33,7 +33,7 @@ const Navbar = () => {
       </ul>
       <ul className="navbar-nav ml-auto nav-flex-icons">
           <li className="nav-item me-3">
-            <Link className="nav-link active" to='/'>
+            <Link className="nav-link active" to='/favoritos'>
             <i className="bi bi-heart"></i>
             </Link>
           </li>

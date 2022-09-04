@@ -7,12 +7,12 @@ export const Vapes = () => {
 
     const Vapes = producto.filter((vape) => vape.category === 'vapes')
   return (
-    <div className='container '>
+    <div className='container mt-5'>
         <div className='d-flex flex-wrap justify-content-around'>
         {
           Vapes.length>0?(
-            Vapes.map((vapes)=>(
-              <Card key={vapes.id} {...vapes}/>
+            Vapes.map((vape)=>(
+              <Card key={vape.id} {...vape} vape={vape}/>
             ))
           ) : (<p>cargando</p>)
         }
