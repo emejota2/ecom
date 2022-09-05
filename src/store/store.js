@@ -14,6 +14,7 @@ const UserProvider = ({children}) =>{
       setProducto(response.data.data);
       console.log(response.data.data);
     };
+    
 
     const favAdd= (vape) => {
       let addvape = favoritos.find(m => m.id === vape.id);
@@ -31,6 +32,8 @@ const UserProvider = ({children}) =>{
       setFav(fav-1)
       return setFavoritos(favoritos.filter((m) => m.id !== id))
   }
+
+
   
     useEffect(() => {
       obtenerdatos();
