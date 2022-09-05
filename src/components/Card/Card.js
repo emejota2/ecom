@@ -15,7 +15,7 @@ const Card = (props) => {
       <div className="product-card">
         <div className="badge">Hot</div>
         <div className="product-tumb">
-          <Link to="/"><img src={image} alt="" /></Link>
+          <Link to={`/detalle/${id}`}><img src={image} alt="" /></Link>
         </div>
         <div className="product-details">
           <span className="product-catagory">{brand}</span>

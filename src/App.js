@@ -11,6 +11,7 @@ import Baterias from "./pages/Accesorios/Baterias/Baterias";
 import Sabores from "./pages/Accesorios/Sabores/Sabores";
 import Tanques from "./pages/Accesorios/Tanques/Tanques";
 import Fav from "./pages/Fav/Fav";
+import Details from "./pages/Details/Details";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/loggin" element={<Loggin/>}/>
           <Route path="/vapes" element={<Vapes/>}/>
           <Route path="/coils" element={<Coils/>}/>
+          <Route path="/detalle/:id" element={<Details/>}/>
           <Route path="/baterias" element={<Baterias/>}/>
           <Route path="/sabores" element={<Sabores/>}/>
           <Route path="/tanques" element={<Tanques/>}/>

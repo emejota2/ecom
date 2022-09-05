@@ -3,7 +3,7 @@ import './CardDetalle.css'
 import { Context } from '../../Store/Store'
 
 const CardDetalle = (props) => {
-    const {producto} = useContext(Context)
+    
 
     const {description, image, information, stock, price, model} = props
     return (

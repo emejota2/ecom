@@ -10,7 +10,7 @@ export const Vapes = () => {
     <div className='container mt-5'>
         <div className='d-flex flex-wrap justify-content-around'>
         {
-          Vapes.length>0?(
+          Vapes.length > 0?(
             Vapes.map((vape)=>(
               <Card key={vape.id} {...vape} vape={vape}/>
             ))
