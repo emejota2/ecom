@@ -5,9 +5,9 @@ import './CardDetalle.css'
 
 const CardDetalle = (props) => {
     const {favAdd, favoritos} = useContext(Context)
+    const {description, image, information, stock, price, model, id, vape} = props
     const isfav = favoritos.some(fav=> fav.id===id)
     const [label, emoji] = isfav?['remove', '❤️']:['add', '🤍']
-    const {description, image, information, stock, price, model, id, vape} = props
 
     return (
 
@@ -19,9 +19,11 @@ const CardDetalle = (props) => {
                     <p className=''>{information}</p>
                     <p className=''>Precio: ${price}</p>
                     <p className=''>Unidades disponibles: {stock}</p>
-                    <a href="#" className="btn btn-primary">Agregar al carrito</a>
-                    <button className='fav ms-5' onClick={() => favAdd(vape) }> <span aria-label={label} role='img'>{emoji}</span></button>
-                    <Link className='btn btn-primary ms-5' to='/'>Volver</Link>
+                    <div className='d-grid gap-2 d-md-flex col-6'>
+                    <button type="button" className="btn btn-primary btn-md">Agregar al carrito</button>
+                    <button className='' onClick={() => favAdd(vape) }> <span aria-label={label} role='img'>{emoji}</span></button>
+                    <button className='btn btn-primary' to='/'>Volver</button>
+                    </div>
             </div>
     </div>
     )

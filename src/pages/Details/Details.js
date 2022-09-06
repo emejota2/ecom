@@ -17,7 +17,7 @@ const Details = () => {
         cardDetalle.map(producto => (
           <CardDetalle key={producto.id} {...producto} producto={producto}/>
         ))
-      ) : (<p className="  ">No ha agregado un producto a favoritos</p>)
+      ) : (<p>cargando</p>)
     }
     </div>
     </div>
