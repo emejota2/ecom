@@ -9,7 +9,7 @@ const Details = () => {
   const {id} = useParams()
   const cardDetalle = producto.filter((productos)=>productos.id == id)
   return (
-    <div className='container mt-5'>
+    <div className='container'>
     <div className='d-flex flex-wrap justify-content-around'>
     {
       cardDetalle.length > 0? (

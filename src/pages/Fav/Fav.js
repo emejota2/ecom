@@ -4,8 +4,6 @@ import { Context } from '../../Store/Store';
 
 const Fav = () => {
     const {favoritos} = useContext(Context);
-  
-
     return (
       <>
       
@@ -19,7 +17,7 @@ const Fav = () => {
             />
           ))
         ) : (
-          <p className="  ">No ha agregado una pelicula favorita</p>
+          <p className="  ">No ha agregado un producto a favoritos</p>
         )}
         
       </div>

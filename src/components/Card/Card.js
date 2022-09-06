@@ -27,7 +27,7 @@ const Card = (props) => {
           </h4>
           <div className="product-bottom-details">
             <div className="product-price">
-             Precio: {price}$
+             Precio: ${price}
             </div>
             <div className="product-links">
             <button className='fav' onClick={() => favAdd(vape) }> <span aria-label={label} role='img'>{emoji}</span></button>
