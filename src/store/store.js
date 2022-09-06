@@ -16,7 +16,7 @@ const UserProvider = ({children}) =>{
     };
     
 
-    const favAdd= (vape) => {
+    const favAdd = (vape) => {
       let addvape = favoritos.find(m => m.id === vape.id);
       
       if(addvape){
