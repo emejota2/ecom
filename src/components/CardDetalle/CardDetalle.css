@@ -55,7 +55,7 @@ h1 {
   text-align: justify;
 }
 
-button {
+.like, .add {
   background: rgb(29, 28, 28);
   padding: 10px;
   display: inline-block;
