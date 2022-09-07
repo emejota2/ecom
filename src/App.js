@@ -12,6 +12,7 @@ import Sabores from "./pages/Accesorios/Sabores/Sabores";
 import Tanques from "./pages/Accesorios/Tanques/Tanques";
 import Fav from "./pages/Fav/Fav";
 import Details from "./pages/Details/Details";
+import CartPage from "./pages/Cart/CartPage";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/sabores" element={<Sabores/>}/>
           <Route path="/tanques" element={<Tanques/>}/>
           <Route path="/favoritos" element={<Fav/>}/>
+          <Route path="/cart" element={<CartPage/>}/>
         </Routes>
         <Footer/>
     </Router>

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
 import { Context } from "../../Store/Store";
 import './CardDetalle.css'
 
@@ -10,22 +9,6 @@ const CardDetalle = (props) => {
     const [label, emoji] = isfav?['remove', '❤️']:['add', '🤍']
 
     return (
-
-    // <div className="card-detalle" style={{width: "60rem"}}>
-    //     <img className="card-img-top" src={image} alt="Card image"/>
-    //         <div className="card-body">
-    //                 <h4 className="card-title">{model}</h4>
-    //                 <p className=''>{description}</p>
-    //                 <p className=''>{information}</p>
-    //                 <p className=''>Precio: ${price}</p>
-    //                 <p className=''>Unidades disponibles: {stock}</p>
-    //                 <div className='d-grid gap-2 d-md-flex col-6'>
-    //                 <button type="button" className="btn btn-primary btn-md">Agregar al carrito</button>
-    //                 <button className='' onClick={() => favAdd(producto) }> <span aria-label={label} role='img'>{emoji}</span></button>
-    //                 <Link to='/'><button className='btn btn-primary'>Volver</button></Link>
-    //                 </div>
-    //         </div>
-    // </div>
 
         <div className="box">
             <div className="images">
@@ -42,7 +25,7 @@ const CardDetalle = (props) => {
                             <button className="add">Añadir al carrito</button>
                             <button className="like ms-1" onClick={() => favAdd(producto) }><span>♥</span></button>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
     )
