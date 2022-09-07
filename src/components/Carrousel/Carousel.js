@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Carrousel.css'
 
 const Carousel = () => {
@@ -6,15 +7,15 @@ const Carousel = () => {
     <div className='body mt-5'>
     <div className="main_box mt-5">
         <div className="img img1">
-            <p className='p'>Vapes</p>
+           <Link to="/vapes"><p className='p'>Vapes</p></Link> 
         </div>
   
         <div className="img img2">
-            <p className='p'>Resistencias</p>
+        <Link to="/coils"><p className='p'>Resistencia</p></Link> 
         </div>
   
         <div className="img img3">
-            <p className='p'>Accesorios</p>
+        <Link to="/accesorios"><p className='p'>Accesorios</p></Link> 
         </div>
   
     </div>

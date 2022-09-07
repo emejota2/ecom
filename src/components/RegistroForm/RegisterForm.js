@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../Store/Store";
+
 import "./RegisterForm.css";
 
 const RegisterForm = () => {
+  const {handleChange, crearDatos} = useContext(Context)
   return (
     <section className="pt-5 formbody">
       <div className="container py-5">
@@ -27,6 +30,8 @@ const RegisterForm = () => {
                               id="form3Examplev2"
                               className="form-control form-control-lg"
                               required
+                              name="first_name"
+                              onChange={handleChange}
                             />
                           </div>
                         </div>
@@ -39,6 +44,8 @@ const RegisterForm = () => {
                               type="text"
                               id="form3Examplev3"
                               className="form-control form-control-lg"
+                              name="last_name"
+                              onChange={handleChange}
                               required
                             />
                           </div>
@@ -52,7 +59,8 @@ const RegisterForm = () => {
                           <label className="form-label" for="form3Examplev3">
                               Gender
                               </label>
-                              <select class="form-select p-3" id="inputGroupSelect02">
+                              <select class="form-select p-3" id="inputGroupSelect02" name="gender"
+                              onChange={handleChange}>
                                 <option selected>Choose...</option>
                                 <option value="1">Female</option>
                                 <option value="2">Male</option>
@@ -70,6 +78,8 @@ const RegisterForm = () => {
                               id="form3Examplev3"
                               min="1920-01-01"
                               className="form-control form-control-lg"
+                              name="birthdate"
+                              onChange={handleChange}
                               required
                             />
                           </div>
@@ -86,6 +96,8 @@ const RegisterForm = () => {
                             type="text"
                             id="form3Examplev4"
                             className="form-control form-control-lg"
+                            name='username'
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -101,6 +113,9 @@ const RegisterForm = () => {
                               type="password"
                               id="form3Examplev5"
                               className="form-control form-control-lg"
+                              name='password'
+                              
+                            onChange={handleChange}
                               required
                             />
                           </div>
@@ -122,6 +137,8 @@ const RegisterForm = () => {
                             type="text"
                             id="form3Examplea2"
                             className="form-control form-control-lg"
+                            name="address"
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -135,6 +152,8 @@ const RegisterForm = () => {
                             type="text"
                             id="form3Examplea6"
                             className="form-control form-control-lg"
+                            name="country"
+                              onChange={handleChange}
                             required
                           />
                         </div>
@@ -149,6 +168,8 @@ const RegisterForm = () => {
                             type="text"
                             id="form3Examplea3"
                             className="form-control form-control-lg"
+                            name="province"
+                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -164,6 +185,8 @@ const RegisterForm = () => {
                               type="text"
                               id="form3Examplea5"
                               className="form-control form-control-lg"
+                              name="city"
+                              onChange={handleChange}
                               required
                             />
                           </div>
@@ -177,6 +200,8 @@ const RegisterForm = () => {
                               type="text"
                               id="form3Examplea4"
                               className="form-control form-control-lg"
+                              name="zip"
+                              onChange={handleChange}
                               required
                               />
                           </div>
@@ -194,6 +219,8 @@ const RegisterForm = () => {
                               type="number"
                               id="form3Examplea7"
                               className="form-control form-control-lg"
+                              name="phone_code"
+                              onChange={handleChange}
                               required
                             />
                           </div>
@@ -207,6 +234,8 @@ const RegisterForm = () => {
                               type="number"
                               id="form3Examplea8"
                               className="form-control form-control-lg"
+                              name="telephone"
+                              onChange={handleChange}
                               required
                             />
                           </div>
@@ -223,6 +252,8 @@ const RegisterForm = () => {
                             id="form3Examplea9"
                             className="form-control form-control-lg"
                             placeholder="name@example.com"
+                            name="email"
+                              onChange={handleChange}
                             required
                           />
                         </div>
@@ -232,9 +263,11 @@ const RegisterForm = () => {
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value={true}
                           id="form2Example3c"
-                          required
+                          name="tc"
+                              onChange={handleChange}
+                         required
                         />
                         <label
                           class="form-check-label text-white ms-3"
@@ -252,6 +285,7 @@ const RegisterForm = () => {
                         type="button"
                         className="btn btn-light btn-lg"
                         data-mdb-ripple-color="dark"
+                        onClick={crearDatos}
                       >
                         Register
                       </button>

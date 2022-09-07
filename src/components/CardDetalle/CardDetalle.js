@@ -10,8 +10,8 @@ const CardDetalle = (props) => {
     const {description, image, information, stock, price, model, id} = props
 
     return (
-    <div className='card'>
-        <div className='d-flex'>
+    <div className='mt-5'>
+        <div className='d-flex mt-5 mb-5'>
             <img className="card-img-top" alt="imagen del producto" src={image}/>
             <div className='card-body'>
                 <h3 className=''>{model}</h3>
