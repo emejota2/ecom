@@ -1,9 +1,80 @@
-.card-img-top{
-    height: 400px;
 
-    
+/* center container in the middle */
+
+body {
+  display: grid;
+  text-transform: uppercase;
 }
 
-.card-detalle{
-    
+.box {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  position: relative;
+  overflow: hidden;
+  width: 620px;
+  height: 400px;
+  background: rgb(230, 227, 227);
+  box-shadow: 5px 5px 15px rgb(5, 5, 5);
+  border-radius: 10px;
 }
+
+p {
+  font-size: 0.8em;
+  color: rgb(4, 4, 4);
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 1.2em;
+  color: black;
+  margin-top: -5px;
+  font-weight: bold;
+}
+
+.imgDetail {
+  width: 280px;
+  margin-top: 45px;
+}
+
+.product {
+  position: absolute;
+  width: 55%;
+  height: 100%;
+  top: 15%;
+  left: 45%;
+}
+
+.desc {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 17px;
+  color: black;
+  font-size: .9em;
+  line-height: 1.6em;
+  margin-right: 25px;
+  text-align: justify;
+}
+
+button {
+  background: rgb(29, 28, 28);
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  color: rgb(225, 221, 221);
+  cursor: pointer;
+}
+
+.add {
+  width: 70%;
+  font-size: 1rem;
+}
+
+.like {
+  width: 22%;
+  font-size: 1rem;
+}
+

@@ -1,5 +1,5 @@
 .logo{
-    width: 25%;
+    width: 20%;
 }
 .navbar-dark{
     backdrop-filter: blur(30px);
@@ -11,6 +11,6 @@ i{
 }
 
 .nav-item{
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
 }

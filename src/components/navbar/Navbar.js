@@ -6,7 +6,7 @@ import logo from '../../img/1659900393707.ico'
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-4">
   <div className="container-fluid">
     <Link to="/"><img className='logo' src={logo} alt='logo'></img></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

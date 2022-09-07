@@ -31,7 +31,7 @@ function App() {
           <Route path="/tanques" element={<Tanques/>}/>
           <Route path="/favoritos" element={<Fav/>}/>
         </Routes>
-      <Footer/>
+        <Footer/>
     </Router>
   );
 }
