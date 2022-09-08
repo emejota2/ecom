@@ -27,6 +27,7 @@ const UserProvider = ({children}) =>{
     const [favoritos, setFavoritos] = useState([])
     const [cart, setCart] = useState([])
     const [fav, setFav] = useState(0)
+    const [item, setItem] = useState(1)
 // Funcion para obtener los productos guardados en la BD
     const obtenerdatos = async () => {
       const response = await axios.get(
@@ -90,17 +91,19 @@ const UserProvider = ({children}) =>{
     return setCart(cart.filter((m) => m.id !== id))
 }
 
-const itemcart = (price) =>{
-   price.reduce((amount, vap) => vap.price = amount, 0)
+const plusitem = () =>{
+   setItem(item + 1)
 }
-  
+const minusItem = ()=>{
+  setItem(item - 1)
+}
     useEffect(() => {
       obtenerdatos();
     }, []);
 
 
     return(
-        <Context.Provider value={{ crearDatos ,handleChange ,producto, favAdd, borrarfav, setFavoritos, favoritos, cartAdd, deleteCart, cart, itemcart}}>
+        <Context.Provider value={{ crearDatos ,handleChange ,producto, favAdd, borrarfav, setFavoritos, favoritos, cartAdd, deleteCart, cart, plusitem, minusItem, item}}>
             {children}
         </Context.Provider>
     )

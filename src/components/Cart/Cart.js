@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import { Context } from '../../Store/Store'
 
 const Cart = (props) => {
-    const {itemcart} = useContext(Context)
-    const {brand, model,price, image, information, id, vape, type}= props
+    const {plusitem, minusItem, item} = useContext(Context)
+    const {model,price, image, information, type}= props
   
+   const suma = price*item
    
   return (
     <div class="mt-5 h-100" >
@@ -30,24 +31,21 @@ const Cart = (props) => {
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
                 <p class="lead fw-normal mb-2">{information}</p>
-                <p><span class="text-muted">Model: </span>{model} <span class="text-muted">Type </span>{type}</p>
+                <p><span class="text-muted">Model: </span>{model} <span class="text-muted">Type: </span>{type}</p>
               </div>
               <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                 <button class="btn btn-link px-2"
-                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                  <i class="fas fa-minus"></i>
+                  onClick={minusItem}>
+                  <i class="bi bi-dash"></i>
                 </button>
-
-                <input id="form1" min="0" name="quantity" value='1' type="number"
-                  class="form-control form-control-sm" />
-
+                {item}
                 <button class="btn btn-link px-2"
-                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                  <i class="fas fa-plus"></i>
+                  onClick={plusitem}>
+                  <i class="bi bi-plus"></i>
                 </button>
               </div>
               <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 class="mb-0">{price}</h5>
+                <h5 class="mb-0">{suma}</h5>
               </div>
               <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                 <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
