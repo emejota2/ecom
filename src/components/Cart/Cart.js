@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
+import { useParams } from 'react-router-dom'
 import { Context } from '../../Store/Store'
+import Cho from '../Cho/Cho'
 
 const Cart = (props) => {
-    const {plusitem, minusItem, item} = useContext(Context)
-    const {model,price, image, information, type}= props
-  
-   const suma = price*item
+    const {plusitem, minusItem, deleteItemFromCart} = useContext(Context)
+    const {model,price, image, information, type, increaseQuantityById, quantity,vape}= props
+    console.log(quantity)
+   const suma = price*quantity
    
+    
   return (
     <div class="mt-5 h-100" >
   <div class="container h-100 py-5">
@@ -35,12 +38,12 @@ const Cart = (props) => {
               </div>
               <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                 <button class="btn btn-link px-2"
-                  onClick={minusItem}>
+                  onClick={()=>deleteItemFromCart(vape)}>
                   <i class="bi bi-dash"></i>
                 </button>
-                {item}
+                {quantity}
                 <button class="btn btn-link px-2"
-                  onClick={plusitem}>
+                  onClick={()=>increaseQuantityById(vape)}>
                   <i class="bi bi-plus"></i>
                 </button>
               </div>
@@ -53,25 +56,11 @@ const Cart = (props) => {
             </div>
           </div>
         </div>
-
-        
-
-        
-
-       
-
-       
-
-        <div class="">
-          <div class="card-body">
-            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 </div>
+
   )
 }
 
