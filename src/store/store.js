@@ -22,7 +22,7 @@ const UserProvider = ({ children }) => {
   });
 
   const data = userinfo;
-  const [price, setPrice] = useState([]);
+  const [precioFinal, setPreciofinal] = useState([]);
   const [producto, setProducto] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
   const [cart, setCart] = useState([]);
@@ -119,7 +119,8 @@ const UserProvider = ({ children }) => {
       setCart([...cart, { ...vape.id, quantity: 1 }]);
     }
   };
-
+   const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
+   
   useEffect(() => {
     obtenerdatos();
   }, []);
@@ -140,6 +141,8 @@ const UserProvider = ({ children }) => {
         deleteCart,
         cart,
         item,
+        total,
+        precioFinal
       }}
     >
       {children}

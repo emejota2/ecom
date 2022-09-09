@@ -4,8 +4,8 @@ import { Context } from '../../Store/Store';
 import './CardFav.css'
 
 const CardFav = (props) => {
-    const {borrarfav} = useContext(Context)
-    const {brand, model, price, image, information, id}= props
+    const {borrarfav, cartAdd} = useContext(Context)
+    const {brand, model, price, image, information, id, vape}= props
     
 
     return (
@@ -29,9 +29,7 @@ const CardFav = (props) => {
               </div>
               <div className="product-links">
               <button  className='fav me-4' onClick={()=>(borrarfav(id))}><span role='img' > 💔 </span></button>
-                <Link to="">
-                <i className="bi bi-cart"></i>
-                </Link>
+              <button className='fav' onClick={() => cartAdd(vape) }> <i className="bi bi-cart"></i></button>
               </div>
             </div>
           </div>
