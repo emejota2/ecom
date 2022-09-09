@@ -11,11 +11,11 @@ const Carousel = () => {
         </div>
   
         <div className="img img2">
-        <Link to="/coils"><p className='p'>Resistencia</p></Link> 
+        <Link to="/coils"><p className='p'>Resistencias</p></Link> 
         </div>
   
         <div className="img img3">
-        <Link to="/accesorios"><p className='p'>Accesorios</p></Link> 
+        <Link to="/sabores"><p className='p'>Sabores</p></Link> 
         </div>
   
     </div>
