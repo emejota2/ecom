@@ -59,7 +59,7 @@ const RegisterForm = () => {
                           <label className="form-label" for="form3Examplev3">
                               Gender
                               </label>
-                              <select class="form-select p-3" id="inputGroupSelect02" name="gender"
+                              <select className="form-select p-3" id="inputGroupSelect02" name="gender"
                               onChange={handleChange}>
                                 <option selected>Choose...</option>
                                 <option value="1">Female</option>
@@ -259,9 +259,9 @@ const RegisterForm = () => {
                         </div>
                       </div>
 
-                      <div class="form-check">
+                      <div className="form-check">
                         <input
-                          class="form-check-input"
+                          className="form-check-input"
                           type="checkbox"
                           value={true}
                           id="form2Example3c"
@@ -270,7 +270,7 @@ const RegisterForm = () => {
                          required
                         />
                         <label
-                          class="form-check-label text-white ms-3"
+                          className="form-check-label text-white ms-3"
                           for="form2Example3"
                         >
                           I do accept the{" "}

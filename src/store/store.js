@@ -142,7 +142,8 @@ const UserProvider = ({ children }) => {
         cart,
         item,
         total,
-        precioFinal
+        precioFinal,
+        fav
       }}
     >
       {children}
