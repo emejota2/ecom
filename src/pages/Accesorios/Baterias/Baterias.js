@@ -12,7 +12,7 @@ const Baterias = () => {
         {
           Baterias.length>0?(
             Baterias.map((vapes)=>(
-              <Card key={vapes.id} {...vapes}/>
+              <Card key={vapes.id} {...vapes} vape={vapes}/>
             ))
           ) : (<p>cargando</p>)
         }

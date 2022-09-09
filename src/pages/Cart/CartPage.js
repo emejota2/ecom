@@ -20,6 +20,7 @@ const CartPage = () => {
           <p className="  ">No ha agregado un producto a favoritos</p>
         )}
         <Cho/>
+        
         </div>
   )
 }

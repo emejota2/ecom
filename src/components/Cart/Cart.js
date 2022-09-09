@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
-import { useParams } from 'react-router-dom'
 import { Context } from '../../Store/Store'
-import Cho from '../Cho/Cho'
+
 
 const Cart = (props) => {
-    const {plusitem, minusItem, deleteItemFromCart} = useContext(Context)
+    const {deleteItemFromCart, } = useContext(Context)
     const {model,price, image, information, type, increaseQuantityById, quantity,vape}= props
-    console.log(quantity)
+    
    const suma = price*quantity
    
     
@@ -48,7 +47,7 @@ const Cart = (props) => {
                 </button>
               </div>
               <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 class="mb-0">{suma}</h5>
+                <h5 class="mb-0">${suma}</h5>
               </div>
               <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                 <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>

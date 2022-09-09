@@ -13,7 +13,7 @@ const Sabores = () => {
         {
           Liquid.length>0?(
             Liquid.map((vapes)=>(
-              <Card key={vapes.id} {...vapes}/>
+              <Card key={vapes.id} {...vapes} vape={vapes}/>
             ))
           ) : (<p>cargando</p>)
         }

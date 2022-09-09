@@ -12,7 +12,7 @@ export const Coils = () => {
         {
           Resistencias.length>0?(
             Resistencias.map((coil)=>(
-              <Card key={coil.id} {...coil}/>
+              <Card key={coil.id} {...coil} vape={coil}/>
             ))
           ) : (<p>cargando</p>)
         }

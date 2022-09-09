@@ -13,7 +13,7 @@ const Tanques = () => {
         {
           Tank.length>0?(
             Tank.map((vapes)=>(
-              <Card key={vapes.id} {...vapes}/>
+              <Card key={vapes.id} {...vapes} vape={vapes}/>
             ))
           ) : (<p>cargando</p>)
         }
