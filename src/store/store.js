@@ -120,7 +120,6 @@ const UserProvider = ({ children }) => {
     }
   };
    const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
-   
   useEffect(() => {
     obtenerdatos();
   }, []);
