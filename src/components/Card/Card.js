@@ -20,24 +20,25 @@ const Card = (props) => {
 
           <p className="infoTag mt-3">{information}</p>
           <p className="infoTag">Precio: ${price}</p>
-
-          <div>
-            <button className="bi bi-cart3" onClick={() => cartAdd(vape)}>
+          <div className="d-flex justify-content-between">
+          <div className="">
+            <button className="bi bi-cart3 mt-1 pt-3 ms-5 cart" onClick={() => cartAdd(vape)}>
               {" "}
-              <i className="bi bi-cart3"></i>
+              <i className="bi bi-cart3 mt-2"></i>
             </button>
           </div>
-          {favoritos.some((fav) => fav.id === id) ? (
+          <button className="mt-2 pt-3 w-50 me-3"> {favoritos.some((fav) => fav.id === id) ? (
             <i
-              className="bi bi-heart-fill text-danger"
+              className="bi bi-heart-fill text-danger mt-1"
               onClick={() => borrarfav(id)}
             ></i>
           ) : (
             <i
-              className="bi bi-heart text-dark"
+              className="bi bi-heart text-dark mt-1"
               onClick={() => favAdd(vape)}
             ></i>
-          )}
+          )} </button>
+        </div>
         </div>
       </div>
     </div>

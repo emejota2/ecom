@@ -6,16 +6,18 @@ body {
 
 .imgCard {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
     height: 225px;
     object-fit:contain;
   }
 
   #container {
-    width: 330px;
-    height: 300;
+    width: 320px;
     margin-top: 10vh;
-    margin-bottom: 5vh;
+    margin-right: 5%;
+    box-shadow:2rem -2.5rem 4rem #1c1d1d;
+    border-radius: 10px;
+    margin-bottom: 5%;
   }
 
   .tag{
@@ -42,5 +44,9 @@ body {
   }
   
   .card__details {
-    padding: 10px 8px;
+    padding: 8px 8px;
+  }
+
+  .cart{
+    font-size: 24px;
   }
