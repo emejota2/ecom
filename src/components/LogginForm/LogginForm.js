@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../../Store/Store'
 import './LogginForm.css'
 const LogginForm = () => {
+  const {loggin, userlog} = useContext(Context)
   return (
     <div>
    
@@ -18,18 +20,18 @@ const LogginForm = () => {
               <p className="text-white-50 mb-5 text-center">Please enter your user and password!</p>
 
               <div className="form-outline form-white mb-4">
-                <label className="form-label" for="typeEmailX">User</label>
-                <input type="text" placeholder='USER' id="typeEmailX" className="form-control form-control-lg" required/>
+                <label className="form-label" for="typeEmailX">Email</label>
+                <input type="email" placeholder='USER' id="typeEmailX" onChange={userlog} name='email' className="form-control form-control-lg" required/>
               </div>
 
               <div className="form-outline form-white mb-4">
                 <label className="form-label" for="typePasswordX">Password</label>
-                <input type="password" placeholder='PASSWORD' id="typePasswordX" className="form-control form-control-lg" required/>
+                <input type="password" placeholder='PASSWORD' id="typePasswordX" onChange={userlog} name='password' className="form-control form-control-lg" required/>
               </div>
 
               <p className="small mb-5 pb-lg-2"><Link className="text-white-50" to="#!">Forgot password?</Link></p>
 
-              <button className="btn btn-outline-light btn-lg logginBoton" type="submit">Login</button>
+              <button className="btn btn-outline-light btn-lg logginBoton" onClick={loggin} type="submit">Login</button>
 
               <div className="d-flex justify-content-center text-center mt-4 pt-1">
                 <Link to="#!" className="text-white me-4"><i className="bi bi-facebook"></i></Link>

@@ -20,8 +20,13 @@ const UserProvider = ({ children }) => {
     telephone: "",
     tc: "",
   });
+  const [user, setUser] = useState({
+    email:'',
+    password:''
+  })
 
   const data = userinfo;
+  const log = user
   const [precioFinal, setPreciofinal] = useState([]);
   const [producto, setProducto] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -45,6 +50,15 @@ const UserProvider = ({ children }) => {
     );
     console.log(response);
   };
+
+  const loggin = async () =>{
+    const response = await axios.post(
+      `https://backendvape.herokuapp.com/users/signin`,
+      log
+    )
+    console.log(log)
+    console.log(response)
+  }
   //Funcion para agregar favoritos
   const favAdd = (vape) => {
     let addvape = favoritos.find((m) => m.id === vape.id);
@@ -70,6 +84,14 @@ const UserProvider = ({ children }) => {
       [e.target.name]: e.target.value,
     });
   };
+
+  const userlog = async (e) => {
+    await setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
+
 
   //Funcion para agregar al carrito
   const cartAdd = (vape) => {
@@ -142,7 +164,10 @@ const UserProvider = ({ children }) => {
         item,
         total,
         precioFinal,
-        fav
+        fav,
+        userlog,
+        loggin
+        
       }}
     >
       {children}
