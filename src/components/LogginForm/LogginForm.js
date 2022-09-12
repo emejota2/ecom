@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Context } from '../../Store/Store'
 import './LogginForm.css'
 const LogginForm = () => {
-  const {loggin, userlog} = useContext(Context)
+  const {loggin, userlog, error} = useContext(Context)
   return (
     <div>
    
@@ -17,7 +17,14 @@ const LogginForm = () => {
             <div className="mb-md-5 mt-md-4 pb-5">
 
               <h2 className="fw-bold mb-2 text-uppercase text-center">Login</h2>
-              <p className="text-white-50 mb-5 text-center">Please enter your user and password!</p>
+              <p className="text-white-50 mb-5 text-center">Please enter your email and password!</p>
+              {
+                error ?
+                    <div className='alert alert-danger' role='alert'>
+                      {error}
+                    </div>
+                    : ''
+              }
 
               <div className="form-outline form-white mb-4">
                 <label className="form-label" for="typeEmailX">Email</label>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Link } from "react-router-dom";
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -15,13 +15,15 @@ import Details from "./pages/Details/Details";
 import CartPage from "./pages/Cart/CartPage";
 
 
+
 function App() {
-  
+ 
   return (
-    <Router>
+    <>
+   
       <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/loggin" element={<Loggin/>}/>
           <Route path="/vapes" element={<Vapes/>}/>
@@ -34,7 +36,8 @@ function App() {
           <Route path="/cart" element={<CartPage/>}/>
         </Routes>
         <Footer/>
-    </Router>
+    
+    </>
   );
 }
 

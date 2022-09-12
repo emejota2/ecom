@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Context = createContext(null);
 const UserProvider = ({ children }) => {
@@ -24,7 +25,6 @@ const UserProvider = ({ children }) => {
     email:'',
     password:''
   })
-
   const data = userinfo;
   const log = user
   const [precioFinal, setPreciofinal] = useState([]);
@@ -33,6 +33,12 @@ const UserProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState(0);
   const [item, setItem] = useState(1);
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
+
+
+
+
   // Funcion para obtener los productos guardados en la BD
   const obtenerdatos = async () => {
     const response = await axios.get(
@@ -52,12 +58,16 @@ const UserProvider = ({ children }) => {
   };
 
   const loggin = async () =>{
+    setError('')
     const response = await axios.post(
       `https://backendvape.herokuapp.com/users/signin`,
-      log
-    )
-    console.log(log)
+      log)
     console.log(response)
+    if(response.data.error){
+      return setError(response.data.error)
+    } else {
+      navigate('/')
+    }
   }
   //Funcion para agregar favoritos
   const favAdd = (vape) => {
@@ -166,7 +176,8 @@ const UserProvider = ({ children }) => {
         precioFinal,
         fav,
         userlog,
-        loggin
+        loggin,
+        error,
         
       }}
     >
