@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { Context } from '../../Store/Store'
+import './Cart.css'
 
 
 const Cart = (props) => {
     const {deleteItemFromCart, } = useContext(Context)
     const {model,price, image, information, type, increaseQuantityById, quantity,vape}= props
     
-   const suma = price*quantity
-   
-    
+    const suma = price*quantity
+
   return (
+    <div className='cartCont'>
     <div className="mt-5 h-100" >
   <div className="container h-100 py-5">
     <div className="row d-flex justify-content-center align-items-center ">
@@ -38,19 +39,19 @@ const Cart = (props) => {
               <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
                 <button className="btn btn-link px-2"
                   onClick={()=>deleteItemFromCart(vape)}>
-                  <i className="bi bi-dash"></i>
+                  <i className="bi bi-dash text-dark"></i>
                 </button>
-                {quantity}
-                <button className="btn btn-link px-2"
+                <p className='text-dark'>{quantity}</p>
+                <button className="btn btn-link px-2 text-dark"
                   onClick={()=>increaseQuantityById(vape)}>
-                  <i className="bi bi-plus"></i>
+                  <i className="bi bi-plus text-dark"></i>
                 </button>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 className="mb-0">${suma}</h5>
+                <h5 className="mb-3 text-dark">${suma}</h5>
               </div>
               <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
+                <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a> 
               </div>
             </div>
           </div>
@@ -58,6 +59,7 @@ const Cart = (props) => {
       </div>
     </div>
   </div>
+</div>
 </div>
 
   )

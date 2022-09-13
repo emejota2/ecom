@@ -6,7 +6,7 @@ import { Context } from '../../Store/Store'
 const CartPage = () => {
   const {cart, increaseQuantityById} = useContext(Context)
   return (
-    <div className="container d-flex justify-content-around flex-wrap mt-5">
+    <div className="container d-flex justify-content-around flex-wrap my-5">
         {cart.length > 0 ? (
           cart.map((vape) => (
             <Cart
