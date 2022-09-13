@@ -13,6 +13,7 @@ import Tanques from "./pages/Accesorios/Tanques/Tanques";
 import Fav from "./pages/Fav/Fav";
 import Details from "./pages/Details/Details";
 import CartPage from "./pages/Cart/CartPage";
+import Administrador from "./pages/Administrador/Administrador";
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/tanques" element={<Tanques/>}/>
           <Route path="/favoritos" element={<Fav/>}/>
           <Route path="/cart" element={<CartPage/>}/>
+          <Route path="/administrador" element={<Administrador />} />
         </Routes>
         <Footer/>
     
