@@ -5,8 +5,9 @@ import { Context } from '../../Store/Store'
 
 const CartPage = () => {
   const {cart, increaseQuantityById} = useContext(Context)
-  return (
+  return (   
     <div className="container d-flex justify-content-around flex-wrap my-5">
+          <h3 className="fw-normal mb-0 text-black">Shopping Cart</h3>
         {cart.length > 0 ? (
           cart.map((vape) => (
             <Cart
@@ -20,8 +21,7 @@ const CartPage = () => {
           <p className="  ">No ha agregado un producto a favoritos</p>
         )}
         <Cho/>
-        
-        </div>
+        </div> 
   )
 }
 

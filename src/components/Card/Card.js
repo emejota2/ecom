@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../../Store/Store";
 import { Link } from "react-router-dom";
 import "./Card.css";
-import { Vapes } from "../../pages/Vapes/Vapes";
 
 const Card = (props) => {
   const { favAdd, favoritos, cartAdd, borrarfav, deleteCart } = useContext(Context);
