@@ -9,9 +9,9 @@ const Cho = () => {
       <div className="cartCont w-100">
       <div>
         <div>
-                <h5 className="text-center mb-2 text-dark">monto</h5>
+                <h5 className="text-center mb-2 text-dark">Monto</h5>
               </div>
-              <div className="d-grid col-1 mx-auto mb-3">
+              <div className="d-grid col-1 mx-auto">
                 <a href="#!" className="text-danger ms-4"><i className="fas fa-trash fa-lg text-dark">${total}</i></a>
               </div>
         <div className="d-grid gap-2 col-6 mx-auto mb-3">

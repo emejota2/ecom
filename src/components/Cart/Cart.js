@@ -24,7 +24,7 @@ const Cart = (props) => {
           </div>
         </div>
 
-        <div className=" rounded-3 mb-4">
+        <div className="rounded-3 mb-4">
           <div className="card-body p-4">
             <div className="row d-flex justify-content-between align-items-center">
               <div className="col-md-2 col-lg-2 col-xl-2">
@@ -34,7 +34,7 @@ const Cart = (props) => {
               </div>
               <div className="col-md-3 col-lg-3 col-xl-3">
                 <p className="lead fw-normal mb-2">{information}</p>
-                <p><span className="text-muted">Model: </span>{model} <span className="text-muted">Type: </span>{type}</p>
+                <p><span className="text-muted">Modelo: </span>{model}</p>
               </div>
               <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
                 <button className="btn btn-link px-2"
@@ -49,9 +49,6 @@ const Cart = (props) => {
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                 <h5 className="mb-3 text-dark">${suma}</h5>
-              </div>
-              <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a> 
               </div>
             </div>
           </div>
