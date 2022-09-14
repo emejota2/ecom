@@ -37,6 +37,7 @@ const UserProvider = ({ children }) => {
   const [error, setError] = useState('')
   const navigate = useNavigate()
   const usuario = Cookies.get('usuario')
+  const role = Cookies.get('role')
 
 
 
@@ -71,8 +72,16 @@ const UserProvider = ({ children }) => {
     if(response.data.error){
       return setError(response.data.msg)
     } else {
-      Cookies.set('usuario', response.data.data[0].username)
-      navigate('/')
+      if(response.data.permission === 'ADMIN'){
+        Cookies.set('usuario', response.data.data[0].username)
+        Cookies.set('role', response.data.data[0].permissions)
+      navigate('/administrador')
+      } else {
+        Cookies.set('usuario', response.data.data[0].username)
+        Cookies.set('role', response.data.data[0].permissions)
+        navigate('/')
+      }
+      
     }
   }
 
@@ -166,10 +175,27 @@ const UserProvider = ({ children }) => {
         navigate('/loggin')
       }
     }
+    const checkRole = () => {
+      if(role !== '2'){
+        alert('no tiene permiso para entrar a esta pagina')
+        navigate('/')
+      }
+    }
+
+    const sining = () =>{
+      navigate('/loggin')
+    }
+
+    const singout = () =>{
+      Cookies.remove('usuario')
+      Cookies.remove('role')
+      navigate('/')
+    }
    const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
   useEffect(() => {
     obtenerdatos();
     checkUser();
+    
   }, []);
 
   return (
@@ -195,7 +221,11 @@ const UserProvider = ({ children }) => {
         loggin,
         error,
         checkUser,
-        usuario
+        usuario,
+        role,
+        checkRole,
+        sining,
+        singout
         
       }}
     >
