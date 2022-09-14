@@ -57,18 +57,24 @@ const UserProvider = ({ children }) => {
     console.log(response);
   };
 
+
   const loggin = async () =>{
     setError('')
+    console.log(log)
+   
     const response = await axios.post(
       `https://backendvape.herokuapp.com/users/signin`,
       log)
-    console.log(response)
+    console.log(response.data)
     if(response.data.error){
-      return setError(response.data.error)
+      return setError(response.data.msg)
     } else {
       navigate('/')
     }
   }
+
+
+
   //Funcion para agregar favoritos
   const favAdd = (vape) => {
     let addvape = favoritos.find((m) => m.id === vape.id);
@@ -177,7 +183,7 @@ const UserProvider = ({ children }) => {
         fav,
         userlog,
         loggin,
-        error,
+        error
         
       }}
     >

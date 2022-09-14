@@ -6,7 +6,7 @@ const LogginForm = () => {
   const {loggin, userlog, error} = useContext(Context)
   return (
     <div>
-   
+              
    <section className="vh-100 gradient-custom ">
   <div className="container py-5 h-100 ">
     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -19,20 +19,21 @@ const LogginForm = () => {
               <h2 className="fw-bold mb-2 text-uppercase text-center">Login</h2>
               <p className="text-white-50 mb-5 text-center">Please enter your email and password!</p>
               {
-                error ?
+                error !=='' ?
                     <div className='alert alert-danger' role='alert'>
                       {error}
                     </div>
                     : ''
               }
+              
 
               <div className="form-outline form-white mb-4">
-                <label className="form-label" for="typeEmailX">Email</label>
+                <label className="form-label" htmlFor="typeEmailX">Email</label>
                 <input type="email" placeholder='USER' id="typeEmailX" onChange={userlog} name='email' className="form-control form-control-lg" required/>
               </div>
 
               <div className="form-outline form-white mb-4">
-                <label className="form-label" for="typePasswordX">Password</label>
+                <label className="form-label" htmlFor="typePasswordX">Password</label>
                 <input type="password" placeholder='PASSWORD' id="typePasswordX" onChange={userlog} name='password' className="form-control form-control-lg" required/>
               </div>
 
