@@ -5,7 +5,7 @@ import './navbar.css'
 import logo from '../../img/1659900393707.ico'
 
 const Navbar = () => {
-  const {cart}= useContext(Context)
+  const {cart, usuario}= useContext(Context)
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-4">
@@ -34,6 +34,7 @@ const Navbar = () => {
         </li>
       </ul>
       <ul className="navbar-nav ml-auto nav-flex-icons">
+          <h4>Bienvenido, {usuario}!</h4>
           <li className="nav-item me-3">
             <Link className="nav-link active" to='/favoritos'>
             <i className="bi bi-heart"></i>

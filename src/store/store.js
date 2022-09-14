@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export const Context = createContext(null);
 const UserProvider = ({ children }) => {
@@ -35,6 +36,7 @@ const UserProvider = ({ children }) => {
   const [item, setItem] = useState(1);
   const [error, setError] = useState('')
   const navigate = useNavigate()
+  const usuario = Cookies.get('usuario')
 
 
 
@@ -69,6 +71,7 @@ const UserProvider = ({ children }) => {
     if(response.data.error){
       return setError(response.data.msg)
     } else {
+      Cookies.set('usuario', response.data.data[0].username)
       navigate('/')
     }
   }
@@ -157,9 +160,16 @@ const UserProvider = ({ children }) => {
       setCart([...cart, { ...vape.id, quantity: 1 }]);
     }
   };
+
+    const checkUser = () => {
+      if(usuario === undefined){
+        navigate('/loggin')
+      }
+    }
    const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
   useEffect(() => {
     obtenerdatos();
+    checkUser();
   }, []);
 
   return (
@@ -183,7 +193,9 @@ const UserProvider = ({ children }) => {
         fav,
         userlog,
         loggin,
-        error
+        error,
+        checkUser,
+        usuario
         
       }}
     >

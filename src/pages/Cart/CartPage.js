@@ -4,7 +4,9 @@ import Cho from '../../components/Cho/Cho'
 import { Context } from '../../Store/Store'
 
 const CartPage = () => {
-  const {cart, increaseQuantityById} = useContext(Context)
+  const {cart, increaseQuantityById, checkUser} = useContext(Context)
+
+  checkUser()
   return (   
     <div className="container d-flex justify-content-around flex-wrap my-5">
           <h3 className="fw-normal mb-0 text-black">Shopping Cart</h3>
