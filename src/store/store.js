@@ -26,6 +26,23 @@ const UserProvider = ({ children }) => {
     email:'',
     password:''
   })
+
+  const [check, setCheck] = useState({
+    first_name: "",
+    last_name: "",
+    birthdate: "",
+    address: "",
+    country: "",
+    province: "",
+    city: "",
+    email: "",
+    phone_code: "",
+    telephone: "",
+    quantity:'',
+    model: '',
+
+  })
+  console.log(check)
   const data = userinfo;
   const log = user
   const [precioFinal, setPreciofinal] = useState([]);
@@ -35,9 +52,18 @@ const UserProvider = ({ children }) => {
   const [fav, setFav] = useState(0);
   const [item, setItem] = useState(1);
   const [error, setError] = useState('')
+  const [show, setShow] = useState(false);
   const navigate = useNavigate()
   const usuario = Cookies.get('usuario')
   const role = Cookies.get('role')
+  const address = Cookies.get('address')
+  const firstName = Cookies.get('first_name')
+  const lastName = Cookies.get('last_name')
+  const city = Cookies.get('city')
+  const email = Cookies.get('email')
+  const tel = Cookies.get('telephone')
+  const country = Cookies.get('country')
+  const province= Cookies.get('province')
 
 
 
@@ -75,16 +101,32 @@ const UserProvider = ({ children }) => {
       if(response.data.permission === 'ADMIN'){
         Cookies.set('usuario', response.data.data[0].username)
         Cookies.set('role', response.data.data[0].permissions)
+        Cookies.set('address', response.data.data[0].address)
+        Cookies.set('first_name', response.data.data[0].first_name)
+        Cookies.set('last_name', response.data.data[0].last_name)
+        Cookies.set('email', response.data.data[0].email)
+        Cookies.set('city', response.data.data[0].city)
+        Cookies.set('telephone', response.data.data[0].telephone)
       navigate('/administrador')
       } else {
         Cookies.set('usuario', response.data.data[0].username)
         Cookies.set('role', response.data.data[0].permissions)
+        Cookies.set('address', response.data.data[0].address)
+        Cookies.set('first_name', response.data.data[0].first_name)
+        Cookies.set('last_name', response.data.data[0].last_name)
+        Cookies.set('email', response.data.data[0].email)
+        Cookies.set('city', response.data.data[0].city)
+        Cookies.set('telephone', response.data.data[0].telephone)
+        Cookies.set('country', response.data.data[0].country)
+        Cookies.set('province', response.data.data[0].province)
         navigate('/')
       }
       
     }
   }
-
+  const checkout = async () => {
+    console.log(check)
+  };
 
 
   //Funcion para agregar favoritos
@@ -120,6 +162,12 @@ const UserProvider = ({ children }) => {
     });
   };
 
+  const cartCheck = async (e) => {
+    await setCheck({
+      ...check,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   //Funcion para agregar al carrito
   const cartAdd = (vape) => {
@@ -191,7 +239,10 @@ const UserProvider = ({ children }) => {
       Cookies.remove('role')
       navigate('/')
     }
+  
    const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
+   const handleShow = () => setShow(true);
+   const handleClose = () => setShow(false);
   useEffect(() => {
     obtenerdatos();
     checkUser();
@@ -225,13 +276,29 @@ const UserProvider = ({ children }) => {
         role,
         checkRole,
         sining,
-        singout
+        singout,
+        show,
+        handleShow,
+        handleClose,
+        navigate,
+        cartCheck,
+        address,
+        firstName,
+        lastName,
+        tel,
+        city,
+        email,
+        country,
+        province,
+        checkout
+        
         
       }}
     >
       {children}
     </Context.Provider>
   );
+  
 };
 
 export default UserProvider;

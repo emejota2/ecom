@@ -1,15 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from '../../Store/Store'
 import './Cart.css'
 
 
 const Cart = (props) => {
-    const {deleteItemFromCart, } = useContext(Context)
-    const {model,price, image, information, type, increaseQuantityById, quantity,vape}= props
+    const {deleteItemFromCart } = useContext(Context)
+    const {model,price, image, information, increaseQuantityById, quantity,vape}= props
+   
+  
+  
+ 
     
     const suma = price*quantity
 
   return (
+    <>
     <div className='cartCont'>
     <div className="mt-5 h-100" >
   <div className="container h-100 py-5">
@@ -53,7 +58,11 @@ const Cart = (props) => {
     </div>
   </div>
 </div>
+
 </div>
+
+        
+</>
 
   )
 }

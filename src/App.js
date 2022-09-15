@@ -14,6 +14,7 @@ import Fav from "./pages/Fav/Fav";
 import Details from "./pages/Details/Details";
 import CartPage from "./pages/Cart/CartPage";
 import Administrador from "./pages/Administrador/Administrador";
+import CheckPage from "./pages/checkout/CheckPage";
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/favoritos" element={<Fav/>}/>
           <Route path="/cart" element={<CartPage/>}/>
           <Route path="/administrador" element={<Administrador />} />
+          <Route path="/checkout" element={<CheckPage/>}/>
         </Routes>
         <Footer/>
     
