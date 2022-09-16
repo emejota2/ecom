@@ -15,15 +15,19 @@ import Details from "./pages/Details/Details";
 import CartPage from "./pages/Cart/CartPage";
 import Administrador from "./pages/Administrador/Administrador";
 import CheckPage from "./pages/checkout/CheckPage";
+import { useContext } from "react";
+import { Context } from "./Store/Store";
+
 
 
 
 function App() {
- 
+ const {role} = useContext(Context)
+ console.log(role)
   return (
     <>
    
-      <Navbar/>
+      {role === 3 ? <Navbar/>:""}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/signup" element={<Signup/>}/>
@@ -39,7 +43,7 @@ function App() {
           <Route path="/administrador" element={<Administrador />} />
           <Route path="/checkout" element={<CheckPage/>}/>
         </Routes>
-        <Footer/>
+       {role === 3 ? <Footer/>:""}
     
     </>
   );
