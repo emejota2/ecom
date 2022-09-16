@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import BackenStore from "./BackenStore";
 
 export const Context = createContext(null);
 const UserProvider = ({ children }) => {
@@ -43,8 +44,7 @@ const UserProvider = ({ children }) => {
 
   })
   console.log(check)
-  const data = userinfo;
-  const log = user
+  
   const [precioFinal, setPreciofinal] = useState([]);
   const [producto, setProducto] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -65,68 +65,7 @@ const UserProvider = ({ children }) => {
   const country = Cookies.get('country')
   const province= Cookies.get('province')
 
-
-
-
-  // Funcion para obtener los productos guardados en la BD
-  const obtenerdatos = async () => {
-    const response = await axios.get(
-      `https://backendvape.herokuapp.com/products`
-    );
-    setProducto(response.data.data);
-    console.log(response.data.data);
-  };
-
-  //Funcion para poder enviar el formulario de registro a la BD para la creacion de usuarios
-  const crearDatos = async () => {
-    const response = await axios.post(
-      `https://backendvape.herokuapp.com/users/signup`,
-      data
-    );
-    console.log(response);
-  };
-
-
-  const loggin = async () =>{
-    setError('')
-    console.log(log)
-   
-    const response = await axios.post(
-      `https://backendvape.herokuapp.com/users/signin`,
-      log)
-    console.log(response.data)
-    if(response.data.error){
-      return setError(response.data.msg)
-    } else {
-      if(response.data.permission === 'ADMIN'){
-        Cookies.set('usuario', response.data.data[0].username)
-        Cookies.set('role', response.data.data[0].permissions)
-        Cookies.set('address', response.data.data[0].address)
-        Cookies.set('first_name', response.data.data[0].first_name)
-        Cookies.set('last_name', response.data.data[0].last_name)
-        Cookies.set('email', response.data.data[0].email)
-        Cookies.set('city', response.data.data[0].city)
-        Cookies.set('telephone', response.data.data[0].telephone)
-      navigate('/administrador')
-      } else {
-        Cookies.set('usuario', response.data.data[0].username)
-        Cookies.set('role', response.data.data[0].permissions)
-        Cookies.set('address', response.data.data[0].address)
-        Cookies.set('first_name', response.data.data[0].first_name)
-        Cookies.set('last_name', response.data.data[0].last_name)
-        Cookies.set('email', response.data.data[0].email)
-        Cookies.set('city', response.data.data[0].city)
-        Cookies.set('telephone', response.data.data[0].telephone)
-        Cookies.set('country', response.data.data[0].country)
-        Cookies.set('province', response.data.data[0].province)
-        navigate('/')
-      }
-      
-    }
-  }
-  const checkout = async () => {
-    console.log(check)
-  };
+  const {loggin, crearDatos, obtenerdatos, checkout} = BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart)
 
 
   //Funcion para agregar favoritos
@@ -230,6 +169,12 @@ const UserProvider = ({ children }) => {
       }
     }
 
+    const checkAdmin = () =>{
+      if(role === '2'){
+        navigate('/administrador')
+      }
+    }
+
     const sining = () =>{
       navigate('/loggin')
     }
@@ -245,8 +190,6 @@ const UserProvider = ({ children }) => {
    const handleClose = () => setShow(false);
   useEffect(() => {
     obtenerdatos();
-    checkUser();
-    
   }, []);
 
   return (
@@ -290,7 +233,13 @@ const UserProvider = ({ children }) => {
         email,
         country,
         province,
-        checkout
+        checkout,
+        setProducto,
+        setFav,
+        setError,
+        Cookies,
+        checkAdmin
+        
         
         
       }}

@@ -27,7 +27,7 @@ function App() {
   return (
     <>
    
-      {role === 3 ? <Navbar/>:""}
+      {role === undefined ? <Navbar/>: role === '3' ?  <Navbar/> : ''}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/signup" element={<Signup/>}/>
@@ -43,8 +43,8 @@ function App() {
           <Route path="/administrador" element={<Administrador />} />
           <Route path="/checkout" element={<CheckPage/>}/>
         </Routes>
-       {role === 3 ? <Footer/>:""}
-    
+       {role === undefined ? <Footer/>:role === '3' ? <Footer/> : ''}
+
     </>
   );
 }
