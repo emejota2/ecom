@@ -71,7 +71,10 @@ export default function BackenStore(setProducto, setError, Cookies, userinfo, us
     products: cart
   }
   const checkout = async () => {
-    console.log(check)
+    const response = await axios.post(
+      `${BASE_URL}/orders/neworder`, info
+    )
+    console.log(response)
     console.log(info)
   };
 
