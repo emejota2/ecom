@@ -5,12 +5,7 @@ import './Cart.css'
 
 const Cart = (props) => {
     const {deleteItemFromCart } = useContext(Context)
-    const {model,price, image, information, increaseQuantityById, quantity,vape}= props
-   
-  
-  
- 
-    
+    const {model, price, image, information, increaseQuantityById, quantity, vape} = props
     const suma = price*quantity
 
   return (

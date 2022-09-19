@@ -50,6 +50,7 @@ const UserProvider = ({ children }) => {
   const [favoritos, setFavoritos] = useState([]);
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState(0);
+  const [price, setPrice] = useState(40);
   const [item, setItem] = useState(1);
   const [error, setError] = useState('')
   const [show, setShow] = useState(false);
@@ -120,6 +121,13 @@ const UserProvider = ({ children }) => {
     }
     console.log(cart);
   };
+
+  //funcion para fitrar por precio
+
+   const filtro = (e) => {
+    setPrice(e.target.value)
+   }
+
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
     return setCart(cart.filter((m) => m.id !== id));
@@ -238,7 +246,10 @@ const UserProvider = ({ children }) => {
         setFav,
         setError,
         Cookies,
-        checkAdmin
+        checkAdmin,
+        filtro,
+        setPrice,
+        price
         
         
         

@@ -5,7 +5,7 @@ import './Cho.css'
 const Cho = () => {
   
     const {total,  handleShow, navigate} = useContext(Context)
-    const ir = () =>{
+    const ir = () => {
       navigate('/checkout')
     }
   return (

@@ -10,12 +10,12 @@ const Card = (props) => {
 
   return (
     <div id="container">
-      <div class="cardGen">
+      <div className="cardGen">
         <Link to={`/detalle/${id}`}><img src={image} alt="Lago di Braies" className="imgCard" /></Link>
-        <div class="card__details">
-          <span class="tag">{brand}</span>
+        <div className="card__details">
+          <span className="tag">{brand}</span>
 
-          <div class="name">{model}</div>
+          <div className="name">{model}</div>
 
           <p className="infoTag mt-3">{information}</p>
           <p className="infoTag">Precio: ${price}</p>

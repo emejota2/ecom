@@ -5,7 +5,7 @@ import './CardFav.css'
 
 const CardFav = (props) => {
     const {borrarfav, cartAdd} = useContext(Context)
-    const {brand, model, price, image, information, id, vape}= props
+    const {brand, model, price, image, information, id, vape} = props
     
 
     return (

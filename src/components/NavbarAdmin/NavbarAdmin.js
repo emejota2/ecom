@@ -31,16 +31,16 @@ const NavbarAdmin = () => {
         </a>
       </li>
       <li>
-      <li class="mb-1">
-        <button class="btn align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-        <i class="bi bi-person-circle"> Customers</i>
+      <li className="mb-1">
+        <button className="btn align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+        <i className="bi bi-person-circle"> Customers</i>
         </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="text-white rounded">New</a></li>
-            <li><a href="#" class="text-white rounded">Processed</a></li>
-            <li><a href="#" class="text-white rounded">Shipped</a></li>
-            <li><a href="#" class="text-white rounded">Returned</a></li>
+        <div className="collapse" id="orders-collapse">
+          <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" className="text-white rounded">New</a></li>
+            <li><a href="#" className="text-white rounded">Processed</a></li>
+            <li><a href="#" className="text-white rounded">Shipped</a></li>
+            <li><a href="#" className="text-white rounded">Returned</a></li>
           </ul>
         </div>
       </li>

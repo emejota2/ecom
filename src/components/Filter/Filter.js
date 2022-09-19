@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from "../../Store/Store"
+import './Filter.css'
 
 const Filter = () => {
+  const {filtro, producto, price} = useContext(Context)
   return (
-    <div className='cartCont'>
-    <div className="mt-5 h-100" >
-  <div className="container h-100 py-5">
-    <div className="row d-flex justify-content-center align-items-center ">
-      <div className="col-10">
-            <p className="mb-0"><span className="text-muted">Sort by:</span> <a href="#!" className="text-body">price <i
-                  className="fas fa-angle-down mt-1"></i></a></p>
-          </div>
-        </div>
-        </div>
+    <div className="">
+      <input type="range" onInput={ filtro } />
+      <h1>Price: { price }</h1>
+      <div>
+      { producto.filter( product => { return product.price > parseInt(price, 10) }).map(product => {
+        return <p key={product.brand}>{ product.brand } | { product.price } &euro; </p>
+      })}        
       </div>
     </div>
   )
