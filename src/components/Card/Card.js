@@ -4,11 +4,23 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 
 const Card = (props) => {
-  const { favAdd, favoritos, cartAdd, borrarfav, deleteCart } = useContext(Context);
+  const { favAdd, favoritos, cartAdd, borrarfav, deleteCart, filtro } = useContext(Context);
   const { brand, model, price, image, information, id, vape } = props;
   const isfav = favoritos.some((fav) => fav.id === id);
 
   return (
+    <>
+    
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" onChange={filtro} type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Ordenar por
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Menor precio</a></li>
+    <li><a class="dropdown-item" href="#">Mayor precio</a></li>
+  </ul>
+</div>
+    
     <div id="container">
       <div className="cardGen">
         <Link to={`/detalle/${id}`}><img src={image} alt="Lago di Braies" className="imgCard" /></Link>
@@ -41,6 +53,8 @@ const Card = (props) => {
         </div>
       </div>
     </div>
+
+</>
   );
 };
 

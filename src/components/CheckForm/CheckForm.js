@@ -3,7 +3,7 @@ import { Context } from '../../Store/Store'
 import './CheckForm.css'
 
 const CheckForm = () => {
-    const {cartCheck, email, tel,city, province, firstName, lastName, address, country, checkout} = useContext(Context)
+    const {cartCheck, email, tel, city, province, firstName, lastName, address, country, checkout} = useContext(Context)
   return (
     <section className=" formbody">
       <div className="container ">
