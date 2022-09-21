@@ -50,7 +50,6 @@ const UserProvider = ({ children }) => {
   const [favoritos, setFavoritos] = useState([]);
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState(0);
-  const [filter, setFilter] = useState([]);
   const [item, setItem] = useState(1);
   const [error, setError] = useState('')
   const [show, setShow] = useState(false);
@@ -124,24 +123,7 @@ const UserProvider = ({ children }) => {
 
   //funcion para fitrar por precio
 
-   const filtro = (e) => {
-    setFilter(e.target.value.toLowerCase())
-    };
-
-    const selectedFilter = (e) => {
-      if (e.target.value === "Menor precio") {
-        const lowestPriceVapes = data
-          .map((product) => product.price.substr(1))
-          .sort((a, b) => a - b);
-        console.log(lowestPriceVapes);
-        setProductsInfo(lowestPriceVapes);
-      }
-      else if (e.target.value === "Mayor precio") {
-        setProductsInfo(data);
-        console.log(setProductsInfo)
-      }
-    };
-
+   
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
     return setCart(cart.filter((m) => m.id !== id));

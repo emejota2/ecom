@@ -9,17 +9,6 @@ const Card = (props) => {
   const isfav = favoritos.some((fav) => fav.id === id);
 
   return (
-    <>
-    
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" onChange={filtro} type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Ordenar por
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Menor precio</a></li>
-    <li><a class="dropdown-item" href="#">Mayor precio</a></li>
-  </ul>
-</div>
     
     <div id="container">
       <div className="cardGen">
@@ -54,7 +43,6 @@ const Card = (props) => {
       </div>
     </div>
 
-</>
   );
 };
 
