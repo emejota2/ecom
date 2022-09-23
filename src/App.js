@@ -18,9 +18,6 @@ import CheckPage from "./pages/checkout/CheckPage";
 import { useContext } from "react";
 import { Context } from "./Store/Store";
 
-
-
-
 function App() {
  const {role} = useContext(Context)
  console.log(role)
