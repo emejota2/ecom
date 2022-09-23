@@ -4,7 +4,7 @@ import { BASE_URL } from '../utils/utils';
 
 
 
-export default function BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart)  {
+export default function BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart, total)  {
   
   const data = userinfo;
   const log = user
@@ -68,7 +68,8 @@ export default function BackenStore(setProducto, setError, Cookies, userinfo, us
   }
   const info = {
     user: check,
-    products: cart
+    products: cart,
+    total
   }
   const checkout = async () => {
     const response = await axios.post(

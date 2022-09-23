@@ -3,7 +3,8 @@ import { Context } from '../../Store/Store'
 import './CheckForm.css'
 
 const CheckForm = () => {
-    const {cartCheck, email, tel, city, province, firstName, lastName, address, country, checkout} = useContext(Context)
+    const {cartCheck,  checkout, check} = useContext(Context)
+    const {email, telephone, city, province, lastName, address, country, first_name, last_name} = check
   return (
     <section className=" formbody">
       <div className="container ">
@@ -26,7 +27,7 @@ const CheckForm = () => {
                             </label>
                             <input
                               type="text"
-                              value={firstName}
+                              value={first_name}
                               id="form3Examplev2"
                               className="form-control form-control-lg"
                               required
@@ -42,7 +43,7 @@ const CheckForm = () => {
                             </label>
                             <input
                               type="text"
-                              value={lastName}
+                              value={last_name}
                               id="form3Examplev3"
                               className="form-control form-control-lg"
                               name="last_name"
@@ -155,7 +156,7 @@ const CheckForm = () => {
                               id="form3Examplea8"
                               className="form-control form-control-lg"
                               name="telephone"
-                              value={tel}
+                              value={telephone}
                               onChange={cartCheck}
                               required
                             />
@@ -180,6 +181,7 @@ const CheckForm = () => {
                           />
                         </div>
                       </div>
+
                     <button onClick={checkout}>checkout</button>
                     
                     </div>

@@ -29,18 +29,18 @@ const UserProvider = ({ children }) => {
   })
 
   const [check, setCheck] = useState({
-    first_name: "",
-    last_name: "",
-    birthdate: "",
-    address: "",
-    country: "",
-    province: "",
-    city: "",
-    email: "",
-    phone_code: "",
-    telephone: "",
-    quantity:'',
-    model: '',
+    first_name: Cookies.get('first_name') === null ? '': Cookies.get('first_name') ,
+    last_name: Cookies.get('last_name') === null ? '': Cookies.get('last_name'),
+    birthdate: Cookies.get('birthdate') === null ? '': Cookies.get('birthdate'),
+    address: Cookies.get('address') === null ? '': Cookies.get('address'),
+    country: Cookies.get('country') === null ? '': Cookies.get('country'),
+    province: Cookies.get('province') === null ? '': Cookies.get('province'),
+    city: Cookies.get('city') === null ? '':  Cookies.get('city'),
+    email: Cookies.get('email') === null ? '': Cookies.get('email'),
+    phone_code: Cookies.get('phone_code') === null ? '': Cookies.get('phone_code'),
+    telephone: Cookies.get('telephone') === null ? '': Cookies.get('telephone'),
+    quantity:Cookies.get('quantity') === null ? '': Cookies.get('quantity'),
+    model: Cookies.get('model') === null ? '': Cookies.get('model'),
 
   })
   console.log(check)
@@ -54,18 +54,11 @@ const UserProvider = ({ children }) => {
   const [error, setError] = useState('')
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
-  const usuario = Cookies.get('usuario')
+  let usuario='';
   const role = Cookies.get('role')
-  const address = Cookies.get('address')
-  const firstName = Cookies.get('first_name')
-  const lastName = Cookies.get('last_name')
-  const city = Cookies.get('city')
-  const email = Cookies.get('email')
-  const tel = Cookies.get('telephone')
-  const country = Cookies.get('country')
-  const province= Cookies.get('province')
-
-  const {loggin, crearDatos, obtenerdatos, checkout} = BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart)
+  
+  const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
+  const {loggin, crearDatos, obtenerdatos, checkout} = BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart, total)
 
 
   //Funcion para agregar favoritos
@@ -189,11 +182,13 @@ const UserProvider = ({ children }) => {
       navigate('/')
     }
   
-   const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
+   
+  
    const handleShow = () => setShow(true);
    const handleClose = () => setShow(false);
   useEffect(() => {
     obtenerdatos();
+    
   }, []);
 
   return (
@@ -229,24 +224,14 @@ const UserProvider = ({ children }) => {
         handleClose,
         navigate,
         cartCheck,
-        address,
-        firstName,
-        lastName,
-        tel,
-        city,
-        email,
-        country,
-        province,
         checkout,
         setProducto,
         setFav,
         setError,
         Cookies,
         checkAdmin,
-        filtro,
-        setFilter,
-        filter,
-        selectedFilter
+        check
+       
       }}
     >
       {children}
