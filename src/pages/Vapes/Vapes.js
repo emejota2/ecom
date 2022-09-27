@@ -3,32 +3,8 @@ import Card from '../../components/Card/Card'
 import { Context } from '../../Store/Store'
 
 export const Vapes = () => {
-  const {producto, setProducto} = useContext(Context)
+  const {producto, setProducto, handleClick, Vape} = useContext(Context)
 
-  let Vape = producto.filter((vape) => vape.category === 'vapes')
-  console.log(Vape)
-
-  const handleClick = (e) => {
-    console.log(producto)
-    if(e.target.value === 'precioAsc') {
-        Vape.sort(function (a, b){
-          return (a.price - b.price)
-      })
-
-          setProducto(Vape)
-          return Vape
-    }
-
-    if(e.target.value === 'precioDesc') {
-        Vape.sort(function (a, b){
-            return (b.price - a.price)
-        })
-
-         setProducto(Vape)
-        return Vape
-    }
-  }
-    
 
   return (
         <div className='container mt-5'>

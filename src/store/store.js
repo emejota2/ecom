@@ -116,6 +116,29 @@ const UserProvider = ({ children }) => {
 
   //funcion para fitrar por precio
 
+  let Vape = producto.filter((vape) => vape.category === 'vapes')
+  console.log(Vape)
+
+  const handleClick = (e) => {
+    console.log(producto)
+    if(e.target.value === 'precioAsc') {
+      Vape.sort(function (a,b){
+        return (a.price - b.price)
+      })
+
+        setProducto(Vape)
+        return Vape
+    }
+
+    if(e.target.value === 'precioDesc'){
+      Vape.sort(function (a, b){
+        return(b.price - a.price)
+      })
+      setProducto(Vape)
+        return Vape
+    }
+  }
+
    
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
@@ -230,7 +253,9 @@ const UserProvider = ({ children }) => {
         setError,
         Cookies,
         checkAdmin,
-        check
+        check,
+        handleClick,
+        Vape
        
       }}
     >
