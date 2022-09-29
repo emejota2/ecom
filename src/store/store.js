@@ -117,12 +117,12 @@ const UserProvider = ({ children }) => {
     console.log(cart);
   };
 
-  //funcion para fitrar por precio
+  //funcion para filtrar por precio los Vapes
 
   let Vape = producto.filter((vape) => vape.category === 'vapes')
 
 
-  const handleClick = (e) => {
+  const handleClickVapes = (e) => {
     console.log(producto)
     if(e.target.value === 'precioAsc') {
       Vape.sort(function (a,b){
@@ -142,6 +142,30 @@ const UserProvider = ({ children }) => {
     }
   }
 
+  //funcion para filtrar por precio los Coils
+
+  let Resistencias = producto.filter((coil) => coil.category === 'resistencias')
+  console.log(Resistencias)
+
+  const handleClickResistencias = (e) => {
+    console.log(producto)
+    if(e.target.value === 'precioAsc') {
+      Resistencias.sort(function (a,b){
+        return (a.price - b.price)
+      })
+
+        setProducto(Resistencias)
+        return Resistencias
+    }
+
+    if(e.target.value === 'precioDesc'){
+      Resistencias.sort(function (a, b){
+        return(b.price - a.price)
+      })
+      setProducto(Resistencias)
+        return Resistencias
+    }
+  }
    
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
@@ -265,6 +289,7 @@ Cookies.remove('model')
         setError,
         Cookies,
         check,
+<<<<<<< Updated upstream
         handleClick,
         Vape,
         getorderDetails,
@@ -280,6 +305,12 @@ Cookies.remove('model')
         removeCookie,
        
         allusers, setAllusers
+=======
+        handleClickResistencias,
+        Vape,
+        Resistencias,
+        handleClickVapes
+>>>>>>> Stashed changes
        
       }}
     >
