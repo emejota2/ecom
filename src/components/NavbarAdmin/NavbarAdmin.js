@@ -2,27 +2,46 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../../Store/Store'
 import NewProduct from '../NewProduct/NewProduct'
+import UpProduct from '../UpdateProduct/UpProduct'
 import './NavbarAdmin.css'
 
 const NavbarAdmin = () => {
-  const {getorderDetails, obtenerdatos, setOrderDetails, orders, setProducto, removeCookie} = useContext(Context)
+  const {getallusers, getorderDetails, obtenerdatos, setOrderDetails, getorders, setProducto, removeCookie, setOrders, setAllusers, status, setStatus} = useContext(Context)
 
   const funcion = () =>{
     setOrderDetails([])
     obtenerdatos()
-    console.log(orders)
+  }
 
+  const order = () =>{
+    getorderDetails()
+    getorders()
   }
   const fun = () =>{
-
+    
     <NewProduct/>
+    setStatus(true)
     setOrderDetails([])
     setProducto([])
+    setOrders([])
+    setAllusers([])
     
   }
   const getuser = () =>{
     setProducto([])
     setOrderDetails([])
+    getallusers()
+    
+  }
+
+  const acPro = () =>{
+
+    <UpProduct/>;
+    setStatus(false)
+    setAllusers([])
+    setOrderDetails([])
+    setOrders([])
+    setProducto([])
     
   }
   return (
@@ -45,7 +64,7 @@ const NavbarAdmin = () => {
       </li>
       <li>
         <Link to="#" className="nav-link text-white mb-3">
-            <i className="bi bi-table" onClick={getorderDetails}> Orders</i>
+            <i className="bi bi-table" onClick={order}> Orders</i>
         </Link>
       </li>
       <li>
@@ -56,7 +75,7 @@ const NavbarAdmin = () => {
         <div className="collapse" id="orders-collapse1">
           <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><Link to="#" className="text-white rounded" onClick={fun}>New</Link></li>
-            <li><Link to="#" className="text-white rounded">Actualizar</Link></li>
+            <li><Link to="#" className="text-white rounded" onClick={acPro}>Actualizar</Link></li>
             
           </ul>
         </div>

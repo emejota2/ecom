@@ -3,7 +3,7 @@ import { Context } from '../../Store/Store'
 import './NewProduct.css'
 
 const NewProduct = () => {
-    const {productoinfocap}= useContext(Context)
+    const {productoinfocap, newProducts}= useContext(Context)
   return (
     <section className=" formbody">
       <div className="container ">
@@ -59,7 +59,7 @@ const NewProduct = () => {
                   </div>
                   <div className=" text-white">
                     <div className="p-5">
-                      <h3 className="fw-normal mb-5">Product Details</h3>
+                      <h3 className="fw-normal mb-5 row">Product Details</h3>
 
                       <div className="mb-4 pb-2">
                         <div className="form-outline form-white">
@@ -76,7 +76,7 @@ const NewProduct = () => {
                           />
                         </div>
                       </div>
-                      <div className="mb-4 pb-2">
+                      <div className="col-md-10 mb-4 pb-2">
                         <div className="form-outline form-white">
                           <label className="form-label" for="form3Examplea6">
                             information
@@ -92,13 +92,13 @@ const NewProduct = () => {
                         </div>
                       </div>
 
-                      <div className="mb-3">
+                      <div className="col-md-2 mb-3">
                         <div className="form-outline form-white">
                           <label className="form-label" for="form3Examplea3">
                             Price
                           </label>
                           <input
-                            type="text"
+                            type="number"
                             id="form3Examplea3"
                          
                             className="form-control form-control-lg"
@@ -116,7 +116,7 @@ const NewProduct = () => {
                               Stock
                             </label>
                             <input
-                              type="text"
+                              type="number"
                               id="form3Examplea5"
                               className="form-control form-control-lg"
                               name="stock"
@@ -141,6 +141,20 @@ const NewProduct = () => {
                             
                           </div>
                         </div>
+                        <div className="col-md-3 mb-2">
+                          <div className="form-outline form-white">
+                            <label className="form-label" for="type">
+                             category
+                            </label>
+                            <select className='fw-normal' id='type' name='category' onChange={productoinfocap}>
+                                <option className='fw-normal' value='accesorios'>accesorios</option>
+                                <option className='fw-normal' value='resistencias'>resistencia</option>
+                                <option className='fw-normal' value='vapes'>vapes</option>
+                                
+                            </select>
+                            
+                          </div>
+                        </div>
                         <div className="col-md-7 mb-2">
                           <div className="form-outline form-white">
                             <label className="form-label" for="form3Examplea8">
@@ -159,7 +173,7 @@ const NewProduct = () => {
                         </div>
                      
 
-                    <button onClick={'checkout'}>checkout</button>
+                    <button onClick={newProducts}>checkout</button>
                     
                     </div>
                   </div>

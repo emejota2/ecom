@@ -4,11 +4,12 @@ import NewProduct from '../../components/NewProduct/NewProduct'
 import OrderModal from '../../components/OrderModal/OrderModal'
 import OrderTable from '../../components/OrderTable/OrderTable'
 import ProductTable from '../../components/ProductTable/ProductTable'
+import UpProduct from '../../components/UpdateProduct/UpProduct'
 import UserTable from '../../components/usertable/UserTable'
 import { Context } from '../../Store/Store'
 
 const Administrador = () => {
-  const {checkRole, orderDetails, producto, allusers, setAllusers} = useContext(Context)
+  const {checkRole, orderDetails, producto, allusers,  status} = useContext(Context)
   
   checkRole()
   
@@ -40,7 +41,7 @@ const Administrador = () => {
           vape={vape}
           {...vape}
         />
-      ))): <NewProduct/>}
+      ))): status===true?<NewProduct/>:status===false?<UpProduct/>:''}
    
   
   </>
