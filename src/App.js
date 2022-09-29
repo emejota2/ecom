@@ -20,7 +20,7 @@ import { Context } from "./Store/Store";
 
 function App() {
  const {role} = useContext(Context)
- console.log(role)
+
   return (
     <>
    

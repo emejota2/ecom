@@ -1,8 +1,9 @@
-import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import BackenStore from "./BackenStore";
+
 
 export const Context = createContext(null);
 const UserProvider = ({ children }) => {
@@ -23,10 +24,7 @@ const UserProvider = ({ children }) => {
     telephone: "",
     tc: "",
   });
-  const [user, setUser] = useState({
-    email:'',
-    password:''
-  })
+ 
 
   const [check, setCheck] = useState({
     first_name: Cookies.get('first_name') === null ? '': Cookies.get('first_name') ,
@@ -43,24 +41,33 @@ const UserProvider = ({ children }) => {
     model: Cookies.get('model') === null ? '': Cookies.get('model'),
 
   })
-  console.log(check)
+
   
   const [precioFinal, setPreciofinal] = useState([]);
-  const [producto, setProducto] = useState([]);
+  
   const [favoritos, setFavoritos] = useState([]);
   const [cart, setCart] = useState([]);
   const [fav, setFav] = useState(0);
   const [item, setItem] = useState(1);
   const [error, setError] = useState('')
   const [show, setShow] = useState(false);
+  const [prod, setProd] = useState({})
+  
+  
   const navigate = useNavigate()
-  let usuario='';
+  let usuario= Cookies.get('first_name');
   const role = Cookies.get('role')
   
   const total = cart.reduce((prev, current) => prev + current.quantity * current.price, 0)
-  const {loggin, crearDatos, obtenerdatos, checkout} = BackenStore(setProducto, setError, Cookies, userinfo, user, navigate, check, cart, total)
+  const {allusers, setAllusers,productoinfocap, loggin, crearDatos, obtenerdatos, checkout, getorderDetails, orderDetails, getorders, orders, producto, setProducto, user,setOrders, setUser, userlog, setOrderDetails} = BackenStore(setShow, setError, Cookies, userinfo,  check, cart, total)
 
-
+  const ordenes = (id) =>{
+    setShow(true)
+    let odernscard = orders.filter((or) =>or.id == id)
+    if(odernscard){
+        console.log(odernscard[0])
+        setProd(odernscard[0])
+} else console.log('nada')}
   //Funcion para agregar favoritos
   const favAdd = (vape) => {
     let addvape = favoritos.find((m) => m.id === vape.id);
@@ -86,13 +93,9 @@ const UserProvider = ({ children }) => {
       [e.target.name]: e.target.value,
     });
   };
+  console.log(producto)
 
-  const userlog = async (e) => {
-    await setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  };
+ 
 
   const cartCheck = async (e) => {
     await setCheck({
@@ -117,7 +120,7 @@ const UserProvider = ({ children }) => {
   //funcion para fitrar por precio
 
   let Vape = producto.filter((vape) => vape.category === 'vapes')
-  console.log(Vape)
+
 
   const handleClick = (e) => {
     console.log(producto)
@@ -189,11 +192,7 @@ const UserProvider = ({ children }) => {
       }
     }
 
-    const checkAdmin = () =>{
-      if(role === '2'){
-        navigate('/administrador')
-      }
-    }
+   
 
     const sining = () =>{
       navigate('/loggin')
@@ -209,10 +208,23 @@ const UserProvider = ({ children }) => {
   
    const handleShow = () => setShow(true);
    const handleClose = () => setShow(false);
-  useEffect(() => {
-    obtenerdatos();
-    
-  }, []);
+
+   const removeCookie = () =>{
+    Cookies.remove('role')
+    Cookies.remove('first_name') 
+    Cookies.remove('last_name')
+    Cookies.remove('birthdate')
+    Cookies.remove('address')
+ Cookies.remove('country')
+    Cookies.remove('province')
+    Cookies.remove('city')
+Cookies.remove('email')
+    Cookies.remove('phone_code')
+    Cookies.remove('telephone')
+    Cookies.remove('quantity')
+Cookies.remove('model')
+   }
+  
 
   return (
     <Context.Provider
@@ -252,10 +264,22 @@ const UserProvider = ({ children }) => {
         setFav,
         setError,
         Cookies,
-        checkAdmin,
         check,
         handleClick,
-        Vape
+        Vape,
+        getorderDetails,
+        orderDetails,
+        setOrderDetails,
+        getorders, 
+        orders,
+        ordenes, obtenerdatos,
+        setShow, prod,
+        setUser, user,
+        setOrders,
+        productoinfocap,
+        removeCookie,
+       
+        allusers, setAllusers
        
       }}
     >
