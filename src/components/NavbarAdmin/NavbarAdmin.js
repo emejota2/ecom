@@ -29,7 +29,7 @@ const NavbarAdmin = () => {
     <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar" style={{width: '280px', height: '1000px'}}>
     <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         
-      <span className="fs-4">Sidebar</span>
+      <span className="fs-4">Administrador</span>
     </Link>
     
     <ul className="nav nav-pills flex-column mb-auto">
