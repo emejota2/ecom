@@ -8,6 +8,13 @@ import './NavbarAdmin.css'
 const NavbarAdmin = () => {
   const {getallusers, getorderDetails, obtenerdatos, setOrderDetails, getorders, setProducto, removeCookie, setOrders, setAllusers, status, setStatus} = useContext(Context)
 
+  const home = ()=>{
+    setStatus(null)
+    setOrderDetails([])
+    setProducto([])
+    setOrders([])
+    setAllusers([])
+  }
   const funcion = () =>{
     setOrderDetails([])
     obtenerdatos()
@@ -45,7 +52,7 @@ const NavbarAdmin = () => {
     
   }
   return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar" style={{width: '280px', height: '1000px'}}>
+    <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar">
     <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         
       <span className="fs-4">Administrador</span>
@@ -53,17 +60,17 @@ const NavbarAdmin = () => {
     
     <ul className="nav nav-pills flex-column mb-auto">
       <li className="nav-item">
-        <Link to="#" className="nav-link  mb-3 mt-5" aria-current="page">
-            <i className="bi bi-house-door mb-5"> Home</i>
+        <Link to="#" className="nav-link   mt-5" aria-current="page">
+            <i className="bi bi-house-door mb-1" onClick={home}> Home</i>
         </Link>
       </li>
       <li>
-        <Link to="#" className="nav-link text-white mb-3">
+        <Link to="#" className="nav-link text-white mb-1">
             <i className="bi bi-speedometer2"> Dashboard</i>
         </Link>
       </li>
       <li>
-        <Link to="#" className="nav-link text-white mb-3">
+        <Link to="#" className="nav-link text-white mb-1">
             <i className="bi bi-table" onClick={order}> Orders</i>
         </Link>
       </li>

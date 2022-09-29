@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Seccion = () => {
   return (
-    <div className="hero-section">
-  <div className="card-grid my-5">
+    <div className="hero-section d-flex ">
+  <div className="card-grid my-5 ">
     <Link className="card me-3" to='/'>
       <div className="card__background imgSec"></div>
       <div className="card__content">

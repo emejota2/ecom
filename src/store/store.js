@@ -22,6 +22,7 @@ const UserProvider = ({ children }) => {
   const [show, setShow] = useState(false);
   const [status, setStatus] =useState(false)
   const [prod, setProd] = useState({});
+  const [edad, setEdad] = useState(false)
   const [productinfo, setProductinfo] = useState({
     brand: "",
     model: "",
@@ -294,21 +295,12 @@ useEffect(() => {
 
   let Vape = producto.filter((vape) => vape.category === "vapes");
 
-<<<<<<< HEAD
-  const handleClick = (e) => {
-    console.log(producto);
-    if (e.target.value === "precioAsc") {
-      Vape.sort(function (a, b) {
-        return a.price - b.price;
-      });
-=======
   const handleClickVapes = (e) => {
     console.log(producto)
     if(e.target.value === 'precioAsc') {
       Vape.sort(function (a,b){
         return (a.price - b.price)
       })
->>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
 
       setProducto(Vape);
       return Vape;
@@ -323,8 +315,6 @@ useEffect(() => {
     }
   };
 
-<<<<<<< HEAD
-=======
   //funcion para filtrar por precio los Coils
 
   let Resistencias = producto.filter((coil) => coil.category === 'resistencias')
@@ -350,7 +340,6 @@ useEffect(() => {
     }
   }
    
->>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
     return setCart(cart.filter((m) => m.id !== id));
@@ -483,24 +472,18 @@ useEffect(() => {
         setOrders,
         productoinfocap,
         removeCookie,
-<<<<<<< HEAD
-        newProducts,
-        allusers,
-        setAllusers,
-        getallusers,
-        status, setStatus,
-        stateproducto,
-        productoactivo
-        
-=======
         allusers, 
         setAllusers,
         handleClickResistencias,
-        Vape,
         Resistencias,
-        handleClickVapes
-       
->>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
+        handleClickVapes,
+        newProducts,
+        getallusers,
+        status, setStatus,
+        stateproducto,
+        productoactivo,
+        edad, setEdad
+        
       }}
     >
       {children}

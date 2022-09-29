@@ -16,4 +16,21 @@
 }
 .video-responsive{
     margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 450px){
+  .video-responsive{
+    flex-direction: column;
+  }
+  .cardvid{
+    height: 1500px;
+  }
+  .vid{
+    width: 350px;
+    margin-right: 20px;
+  }
 }

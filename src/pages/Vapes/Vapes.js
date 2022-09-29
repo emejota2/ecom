@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Card from '../../components/Card/Card'
 import { Context } from '../../Store/Store'
+import './Vapes.css'
 
 export const Vapes = () => {
   const {producto, setProducto, handleClickVapes, Vape} = useContext(Context)
@@ -9,8 +10,8 @@ export const Vapes = () => {
   return (
         <div className='container mt-5'>
           <div className='d-flex flex-wrap justify-content-around text-start'>
-            <div className='d-flex filtro mt-5'>
-              <span className='me-3 mt-5 text-nowrap'>Ordenar por:</span>
+            <div className='d-flex filtro mt-5 orden'>
+              <span className='me-3 mt-5 text-nowrap '>Ordenar por:</span>
               <select className="form-select mt-5 text-dark filter" onChange={(e) => handleClickVapes(e)}>
                     <option value="precioAsc">Menor precio</option>
                     <option value="precioDesc">Mayor precio</option>

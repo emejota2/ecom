@@ -4,4 +4,16 @@
 }
 .sidebar{
     position:absolute;
+    height: 1000px;
+    width: 280px;
+
 }
+
+@media (max-width: 450px) {
+    .sidebar{
+        position:unset;
+        height: 500px;
+        width: 100%;
+    }
+    
+  }

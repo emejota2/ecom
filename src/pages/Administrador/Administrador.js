@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import HomeAdmin from '../../components/Homeadmin/HomeAdmin'
 import NavbarAdmin from '../../components/NavbarAdmin/NavbarAdmin'
 import NewProduct from '../../components/NewProduct/NewProduct'
 import OrderModal from '../../components/OrderModal/OrderModal'
@@ -41,7 +42,7 @@ const Administrador = () => {
           vape={vape}
           {...vape}
         />
-      ))): status===true?<NewProduct/>:status===false?<UpProduct/>:''}
+      ))): status===true?<NewProduct/>:status===false?<UpProduct/>:status===null?<HomeAdmin/>:''}
    
   
   </>
