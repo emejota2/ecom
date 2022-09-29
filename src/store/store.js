@@ -289,8 +289,6 @@ Cookies.remove('model')
         setError,
         Cookies,
         check,
-<<<<<<< Updated upstream
-        handleClick,
         Vape,
         getorderDetails,
         orderDetails,
@@ -303,14 +301,12 @@ Cookies.remove('model')
         setOrders,
         productoinfocap,
         removeCookie,
-       
-        allusers, setAllusers
-=======
+        allusers, 
+        setAllusers,
         handleClickResistencias,
         Vape,
         Resistencias,
         handleClickVapes
->>>>>>> Stashed changes
        
       }}
     >
