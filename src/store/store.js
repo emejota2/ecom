@@ -290,16 +290,25 @@ useEffect(() => {
     console.log(cart);
   };
 
-  //funcion para fitrar por precio
+  //funcion para filtrar por precio los Vapes
 
   let Vape = producto.filter((vape) => vape.category === "vapes");
 
+<<<<<<< HEAD
   const handleClick = (e) => {
     console.log(producto);
     if (e.target.value === "precioAsc") {
       Vape.sort(function (a, b) {
         return a.price - b.price;
       });
+=======
+  const handleClickVapes = (e) => {
+    console.log(producto)
+    if(e.target.value === 'precioAsc') {
+      Vape.sort(function (a,b){
+        return (a.price - b.price)
+      })
+>>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
 
       setProducto(Vape);
       return Vape;
@@ -314,6 +323,34 @@ useEffect(() => {
     }
   };
 
+<<<<<<< HEAD
+=======
+  //funcion para filtrar por precio los Coils
+
+  let Resistencias = producto.filter((coil) => coil.category === 'resistencias')
+  console.log(Resistencias)
+
+  const handleClickResistencias = (e) => {
+    console.log(producto)
+    if(e.target.value === 'precioAsc') {
+      Resistencias.sort(function (a,b){
+        return (a.price - b.price)
+      })
+
+        setProducto(Resistencias)
+        return Resistencias
+    }
+
+    if(e.target.value === 'precioDesc'){
+      Resistencias.sort(function (a, b){
+        return(b.price - a.price)
+      })
+      setProducto(Resistencias)
+        return Resistencias
+    }
+  }
+   
+>>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
     return setCart(cart.filter((m) => m.id !== id));
@@ -431,7 +468,6 @@ useEffect(() => {
         setError,
         Cookies,
         check,
-        handleClick,
         Vape,
         getorderDetails,
         orderDetails,
@@ -447,6 +483,7 @@ useEffect(() => {
         setOrders,
         productoinfocap,
         removeCookie,
+<<<<<<< HEAD
         newProducts,
         allusers,
         setAllusers,
@@ -455,6 +492,15 @@ useEffect(() => {
         stateproducto,
         productoactivo
         
+=======
+        allusers, 
+        setAllusers,
+        handleClickResistencias,
+        Vape,
+        Resistencias,
+        handleClickVapes
+       
+>>>>>>> 27fd01e6045eb664a09d4bb51e716c8d48646786
       }}
     >
       {children}

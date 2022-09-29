@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from "../../Store/Store";
 import { Link } from 'react-router-dom'
 import './navbar.css'
-import logo from '../../img/1659900393707.ico'
+import logo from '../../img/logo.png'
 
 const Navbar = () => {
   const {cart, usuario}= useContext(Context)
@@ -10,7 +10,7 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top py-4">
   <div className="container-fluid">
-    <Link to="/"><img className='logo' src={logo} alt='logo'></img></Link>
+    <Link to="/"><img className='logo ms-3' src={logo} alt='logo'></img></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +34,7 @@ const Navbar = () => {
         </li>
       </ul>
       <ul className="navbar-nav ml-auto nav-flex-icons">
-          <h4>Bienvenido, {usuario}!</h4>
+          <h4 className="me-5 mt-2">Bienvenido, {usuario}!</h4>
           <li className="nav-item me-3">
             <Link className="nav-link active" to='/favoritos'>
             <i className="bi bi-heart"></i>
