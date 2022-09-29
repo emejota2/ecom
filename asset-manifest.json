@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/ecom/static/css/main.573855da.css",
+    "main.js": "/ecom/static/js/main.6845fb1f.js",
+    "static/js/787.69af1a8b.chunk.js": "/ecom/static/js/787.69af1a8b.chunk.js",
+    "static/media/e-liquid.jpeg": "/ecom/static/media/e-liquid.fd21dec763b807f86184.jpeg",
+    "static/media/centaurus quest.jpg": "/ecom/static/media/centaurus quest.61e5127513de861eb715.jpg",
+    "static/media/lost vape ursa nano.jpg": "/ecom/static/media/lost vape ursa nano.20a9182cf5150b6f4a8b.jpg",
+    "static/media/UB-PRO-SERIES-COILS_01-1.jpg": "/ecom/static/media/UB-PRO-SERIES-COILS_01-1.feafc677d4ce3ce1d58e.jpg",
+    "static/media/smoke pen.jpg": "/ecom/static/media/smoke pen.3f8913ee915bc39991e8.jpg",
+    "static/media/logo.png": "/ecom/static/media/logo.abf9c53ca990fef4b3db.png",
+    "index.html": "/ecom/index.html",
+    "main.573855da.css.map": "/ecom/static/css/main.573855da.css.map",
+    "main.6845fb1f.js.map": "/ecom/static/js/main.6845fb1f.js.map",
+    "787.69af1a8b.chunk.js.map": "/ecom/static/js/787.69af1a8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.573855da.css",
+    "static/js/main.6845fb1f.js"
+  ]
+}
