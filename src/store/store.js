@@ -2,16 +2,13 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { BASE_URL } from '../utils/utils';
-
-
-
+import { BASE_URL } from "../utils/utils";
 
 export const Context = createContext(null);
 const UserProvider = ({ children }) => {
-  const [orderDetails, setOrderDetails] = useState({})
-  const [allusers, setAllusers] = useState([])
-  const [orders, setOrders] = useState({})
+  const [orderDetails, setOrderDetails] = useState({});
+  const [allusers, setAllusers] = useState([]);
+  const [orders, setOrders] = useState({});
   const [producto, setProducto] = useState([]);
   const [precioFinal, setPreciofinal] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -20,9 +17,9 @@ const UserProvider = ({ children }) => {
   const [item, setItem] = useState(1);
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
-  const [status, setStatus] =useState(false)
+  const [status, setStatus] = useState(false);
   const [prod, setProd] = useState({});
-  const [edad, setEdad] = useState(false)
+  const [edad, setEdad] = useState(false);
   const [productinfo, setProductinfo] = useState({
     brand: "",
     model: "",
@@ -32,8 +29,8 @@ const UserProvider = ({ children }) => {
     stock: "",
     type: "",
     image: "",
-    category:'',
-    active: '1'
+    category: "",
+    active: "1",
   });
   const [userinfo, setUserinfo] = useState({
     first_name: "",
@@ -53,92 +50,75 @@ const UserProvider = ({ children }) => {
     tc: "",
   });
   const [check, setCheck] = useState({
-    first_name:
-      Cookies.get("first_name") === null ? "" : Cookies.get("first_name"),
-    last_name:
-      Cookies.get("last_name") === null ? "" : Cookies.get("last_name"),
-    birthdate:
-      Cookies.get("birthdate") === null ? "" : Cookies.get("birthdate"),
+    first_name: Cookies.get("first_name") === null ? "" : Cookies.get("first_name"),
+    last_name: Cookies.get("last_name") === null ? "" : Cookies.get("last_name"),
+    birthdate: Cookies.get("birthdate") === null ? "" : Cookies.get("birthdate"),
     address: Cookies.get("address") === null ? "" : Cookies.get("address"),
     country: Cookies.get("country") === null ? "" : Cookies.get("country"),
     province: Cookies.get("province") === null ? "" : Cookies.get("province"),
     city: Cookies.get("city") === null ? "" : Cookies.get("city"),
     email: Cookies.get("email") === null ? "" : Cookies.get("email"),
-    phone_code:
-      Cookies.get("phone_code") === null ? "" : Cookies.get("phone_code"),
-    telephone:
-      Cookies.get("telephone") === null ? "" : Cookies.get("telephone"),
+    phone_code:Cookies.get("phone_code") === null ? "" : Cookies.get("phone_code"),
+    telephone:Cookies.get("telephone") === null ? "" : Cookies.get("telephone"),
     quantity: Cookies.get("quantity") === null ? "" : Cookies.get("quantity"),
     model: Cookies.get("model") === null ? "" : Cookies.get("model"),
   });
   const [user, setUser] = useState({
-    email:'',
-    password:''
-  })
+    email: "",
+    password: "",
+  });
   const [actProduct, setActProduct] = useState({
-    id:'',
-    active:''
-  })
+    id: "",
+    active: "",
+  });
 
-  
   // Funcion para obtener los productos guardados en la BD
   const obtenerdatos = async () => {
-    const response = await axios.get(
-      `${BASE_URL}/products`
-    );
+    const response = await axios.get(`${BASE_URL}/products`);
     setProducto(response.data.data);
     console.log(response.data.data);
   };
 
-
-
   //Funcion para poder enviar el formulario de registro a la BD para la creacion de usuarios
   const crearDatos = async () => {
-    const response = await axios.post(
-      `${BASE_URL}/users/signup`,
-      data
-    );
+    const response = await axios.post(`${BASE_URL}/users/signup`, data);
     console.log(response);
   };
 
+  const loggin = async () => {
+    setError("");
+    console.log(log);
 
-  const loggin = async () =>{
-    setError('')
-    console.log(log)
-   
-    const response = await axios.post(
-      `${BASE_URL}/users/signin`,
-      log)
- 
-    if(response.data.error){
-      return setError(response.data.msg)
+    const response = await axios.post(`${BASE_URL}/users/signin`, log);
+
+    if (response.data.error) {
+      return setError(response.data.msg);
     } else {
-      if(response.data.data[0].permissions === '2'){
-        Cookies.set('usuario', response.data.data[0].username)
-        Cookies.set('role', response.data.data[0].permissions)
-        Cookies.set('address', response.data.data[0].address)
-        Cookies.set('first_name', response.data.data[0].first_name)
-        Cookies.set('last_name', response.data.data[0].last_name)
-        Cookies.set('email', response.data.data[0].email)
-        Cookies.set('city', response.data.data[0].city)
-        Cookies.set('telephone', response.data.data[0].telephone)
-        navigate('/administrador')
+      if (response.data.data[0].permissions === "2") {
+        Cookies.set("usuario", response.data.data[0].username);
+        Cookies.set("role", response.data.data[0].permissions);
+        Cookies.set("address", response.data.data[0].address);
+        Cookies.set("first_name", response.data.data[0].first_name);
+        Cookies.set("last_name", response.data.data[0].last_name);
+        Cookies.set("email", response.data.data[0].email);
+        Cookies.set("city", response.data.data[0].city);
+        Cookies.set("telephone", response.data.data[0].telephone);
+        navigate("/administrador");
       } else {
-        Cookies.set('usuario', response.data.data[0].username)
-        Cookies.set('role', response.data.data[0].permissions)
-        Cookies.set('address', response.data.data[0].address)
-        Cookies.set('first_name', response.data.data[0].first_name)
-        Cookies.set('last_name', response.data.data[0].last_name)
-        Cookies.set('email', response.data.data[0].email)
-        Cookies.set('city', response.data.data[0].city)
-        Cookies.set('telephone', response.data.data[0].telephone)
-        Cookies.set('country', response.data.data[0].country)
-        Cookies.set('province', response.data.data[0].province)
-        navigate('/')
+        Cookies.set("usuario", response.data.data[0].username);
+        Cookies.set("role", response.data.data[0].permissions);
+        Cookies.set("address", response.data.data[0].address);
+        Cookies.set("first_name", response.data.data[0].first_name);
+        Cookies.set("last_name", response.data.data[0].last_name);
+        Cookies.set("email", response.data.data[0].email);
+        Cookies.set("city", response.data.data[0].city);
+        Cookies.set("telephone", response.data.data[0].telephone);
+        Cookies.set("country", response.data.data[0].country);
+        Cookies.set("province", response.data.data[0].province);
+        navigate("/");
       }
-      
     }
-  }
+  };
   const total = cart.reduce(
     (prev, current) => prev + current.quantity * current.price,
     0
@@ -146,43 +126,40 @@ const UserProvider = ({ children }) => {
   const info = {
     user: check,
     products: cart,
-    total
-  }
+    total,
+  };
   const checkout = async () => {
-    console.log(info)
-    const response = await axios.post(
-      `${BASE_URL}/orders/neworder`, info
-    )
-    console.log(response)
-    
+    console.log(info);
+    const response = await axios.post(`${BASE_URL}/orders/neworder`, info);
+    console.log(response);
   };
 
-  const getorderDetails = async () =>{
-    const response = await axios.get(`${BASE_URL}/orders/detail`)
-    setOrderDetails(response.data.data)
-    console.log(response.data.data)
-  }
+  const getorderDetails = async () => {
+    const response = await axios.get(`${BASE_URL}/orders/detail`);
+    setOrderDetails(response.data.data);
+    console.log(response.data.data);
+  };
 
-  const getorders = async () =>{
-    const response = await axios.get(`${BASE_URL}/orders/`)
-    setOrders(response.data.data)
-    console.log(response.data.data)
-  }
-  console.log(orders)
+  const getorders = async () => {
+    const response = await axios.get(`${BASE_URL}/orders/`);
+    setOrders(response.data.data);
+    console.log(response.data.data);
+  };
+  console.log(orders);
 
-  const getallusers = async () =>{
-    const response = await axios.get(`${BASE_URL}/users/`)
-    setAllusers(response.data.data)
-    console.log(response.data.data)
-  }
+  const getallusers = async () => {
+    const response = await axios.get(`${BASE_URL}/users/`);
+    setAllusers(response.data.data);
+    console.log(response.data.data);
+  };
 
-  const newProducts = async () =>{
-    const response = await axios.post(`${BASE_URL}/products/newproduct`, pr)
-    console.log(response.data)
-    if(response.data.error){
-     return console.log(response.data)
+  const newProducts = async () => {
+    const response = await axios.post(`${BASE_URL}/products/newproduct`, pr);
+    console.log(response.data);
+    if (response.data.error) {
+      return console.log(response.data);
     }
-  }
+  };
   const productoinfocap = async (e) => {
     await setProductinfo({
       ...productinfo,
@@ -194,10 +171,8 @@ const UserProvider = ({ children }) => {
   let usuario = Cookies.get("first_name");
   const role = Cookies.get("role");
 
-  
- 
   const data = userinfo;
-   const pr = productinfo
+  const pr = productinfo;
   const userlog = async (e) => {
     await setUser({
       ...user,
@@ -212,29 +187,27 @@ const UserProvider = ({ children }) => {
     });
   };
 
-  const estado = actProduct
-  console.log(estado)
-  const log = user
-  
-  const productoactivo =async () =>{
-    const response = await axios.put(`${BASE_URL}/products/${actProduct.id}`, estado)
-    console.log(response)
-  }
-const fun = ()=>{
-  getorders()
-  obtenerdatos()
-}
+  const estado = actProduct;
+  console.log(estado);
+  const log = user;
 
+  const productoactivo = async () => {
+    const response = await axios.put(
+      `${BASE_URL}/products/${actProduct.id}`,
+      estado
+    );
+    console.log(response);
+  };
+  const fun = () => {
+    getorders();
+    obtenerdatos();
+  };
 
-useEffect(() => {
-  fun();
-  obtenerdatos()
-  getallusers()
-  
-}, []);
-
-
-
+  useEffect(() => {
+    fun();
+    obtenerdatos();
+    getallusers();
+  }, []);
 
   const ordenes = (id) => {
     setShow(true);
@@ -296,11 +269,11 @@ useEffect(() => {
   let Vape = producto.filter((vape) => vape.category === "vapes");
 
   const handleClickVapes = (e) => {
-    console.log(producto)
-    if(e.target.value === 'precioAsc') {
-      Vape.sort(function (a,b){
-        return (a.price - b.price)
-      })
+    console.log(producto);
+    if (e.target.value === "precioAsc") {
+      Vape.sort(function (a, b) {
+        return a.price - b.price;
+      });
 
       setProducto(Vape);
       return Vape;
@@ -317,29 +290,31 @@ useEffect(() => {
 
   //funcion para filtrar por precio los Coils
 
-  let Resistencias = producto.filter((coil) => coil.category === 'resistencias')
-  console.log(Resistencias)
+  let Resistencias = producto.filter(
+    (coil) => coil.category === "resistencias"
+  );
+  console.log(Resistencias);
 
   const handleClickResistencias = (e) => {
-    console.log(producto)
-    if(e.target.value === 'precioAsc') {
-      Resistencias.sort(function (a,b){
-        return (a.price - b.price)
-      })
+    console.log(producto);
+    if (e.target.value === "precioAsc") {
+      Resistencias.sort(function (a, b) {
+        return a.price - b.price;
+      });
 
-        setProducto(Resistencias)
-        return Resistencias
+      setProducto(Resistencias);
+      return Resistencias;
     }
 
-    if(e.target.value === 'precioDesc'){
-      Resistencias.sort(function (a, b){
-        return(b.price - a.price)
-      })
-      setProducto(Resistencias)
-        return Resistencias
+    if (e.target.value === "precioDesc") {
+      Resistencias.sort(function (a, b) {
+        return b.price - a.price;
+      });
+      setProducto(Resistencias);
+      return Resistencias;
     }
-  }
-   
+  };
+
   //funcion para borrar articulos en el carrito
   const deleteCart = (id) => {
     return setCart(cart.filter((m) => m.id !== id));
@@ -472,18 +447,19 @@ useEffect(() => {
         setOrders,
         productoinfocap,
         removeCookie,
-        allusers, 
+        allusers,
         setAllusers,
         handleClickResistencias,
         Resistencias,
         handleClickVapes,
         newProducts,
         getallusers,
-        status, setStatus,
+        status,
+        setStatus,
         stateproducto,
         productoactivo,
-        edad, setEdad
-        
+        edad,
+        setEdad,
       }}
     >
       {children}
